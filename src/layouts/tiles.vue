@@ -67,7 +67,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 container-tiles">
           <!-- Content will be placed here -->
           <slot></slot>
         </div>

@@ -1,0 +1,70 @@
+$meat-panel-size: 300px;
+
+.meal-panel {
+  width: $meat-panel-size;
+  margin-right: 20px;
+
+  .meal-panel-body {
+    padding: 5px;
+    width: $meat-panel-size;
+    height: $meat-panel-size;
+
+    .meal-panel-body-image {
+      width: calc(#{$meat-panel-size} - 10px);
+      height: calc(#{$meat-panel-size} - 10px);
+    }
+
+    .meal-panel-body-text-wrap {
+      position: relative;
+      top: -50px;
+      height: 50px;
+      width: calc(#{$meat-panel-size} - 10px);
+      border-top: 1px solid #ddd;
+      background: -moz-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,1) 80%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,1) 80%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      align-items: center;
+
+      .meal-panel-body-text {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .meal-panel-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .meal-panel-footer-author {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .meal-panel-footer-author-additional {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 10px;
+
+        .meal-panel-footer-author-name {
+          font-size: 16px;
+        }
+
+        .meal-panel-footer-author-rating {
+
+        }
+      }
+
+    }
+
+    .meal-panel-footer-info {
+      .meal-panel-footer-info-price {
+
+      }
+    }
+  }
+}

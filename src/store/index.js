@@ -14,6 +14,7 @@ import createLogger from 'vuex/dist/logger';
 // Modules
 import account from './modules/account';
 import auth from './modules/auth';
+import meal from './modules/meal';
 
 Vue.use(Vuex);
 
@@ -26,6 +27,7 @@ export default new Vuex.Store({
   modules: {
     account,
     auth,
+    meal,
   },
 
   /**

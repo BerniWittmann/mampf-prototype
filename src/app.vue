@@ -14,6 +14,7 @@
   import store from './store';
   import { router, i18n } from './bootstrap';
   import accountService from './services/account';
+  import mealService from './services/meal';
 
   export default {
     /**
@@ -39,6 +40,7 @@
       // fetch the data from the API
       if (this.$store.state.auth.authenticated) {
         accountService.find();
+        mealService.get();
       }
     },
   };

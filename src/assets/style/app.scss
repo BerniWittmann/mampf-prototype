@@ -1,0 +1,14 @@
+@import "mixins";
+@import "meal-panel";
+@import "user-avatar";
+@import "rating";
+
+.padding-left {
+  padding-left: 8px;
+}
+
+.container-tiles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
