@@ -2,7 +2,7 @@
   <v-layout>
     <v-panel contextual-style="primary">
       <h1 class="panel-title" slot="heading">
-        Login
+        {{ $t('auth.login') }}
       </h1>
       <div slot="body">
         <form @submit.prevent="login(user)">
@@ -14,7 +14,7 @@
               <input
                 v-model="user.email"
                 type="email"
-                placeholder="Email"
+                v-bind:placeholder="$t('auth.email')"
                 class="form-control"
               >
             </div>
@@ -27,21 +27,21 @@
               <input
                 v-model="user.password"
                 type="password"
-                placeholder="Password"
+                v-bind:placeholder="$t('auth.password')"
                 class="form-control"
               >
             </div>
           </div>
           <div class="form-group">
             <button class="btn btn-primary">
-              Login
+              {{ $t('auth.login') }}
             </button>
           </div>
         </form>
       </div>
       <div slot="footer">
-        No account?
-        <router-link :to="{ name: 'register.index' }">Register</router-link>
+        {{ $t('auth.no_account') }}
+        <router-link :to="{ name: 'register.index' }">{{ $t('auth.register') }}</router-link>
       </div>
     </v-panel>
   </v-layout>

@@ -4,20 +4,20 @@
       <h1 class="panel-title"
           slot="heading"
       >
-        My Account
+        {{ $t('account.my_account') }}
       </h1>
       <div slot="body">
         <table class="table table-striped">
           <thead>
           <tr>
             <th>
-              First Name
+              {{ $t('account.first_name') }}
             </th>
             <th>
-              Last Name
+              {{ $t('account.last_name') }}
             </th>
             <th>
-              Email
+              {{ $t('account.email') }}
             </th>
           </tr>
           </thead>
@@ -35,9 +35,6 @@
           </tr>
           </tbody>
         </table>
-      </div>
-      <div slot="footer">
-        Made with love by Vivid Web
       </div>
     </v-panel>
   </v-layout>

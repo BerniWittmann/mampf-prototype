@@ -2,7 +2,7 @@
   <v-layout>
     <v-panel contextual-style="primary">
       <h1 class="panel-title" slot="heading">
-        Login
+        {{ $t('auth.registration') }}
       </h1>
       <div slot="body">
         <form @submit.prevent="register(user)">
@@ -14,7 +14,7 @@
               <input
                 v-model="user.firstName"
                 type="text"
-                placeholder="First name"
+                v-bind:placeholder="$t('auth.first_name')"
                 class="form-control"
               >
             </div>
@@ -27,7 +27,7 @@
               <input
                 v-model="user.lastName"
                 type="text"
-                placeholder="Last name"
+                v-bind:placeholder="$t('auth.last_name')"
                 class="form-control"
               >
             </div>
@@ -40,7 +40,7 @@
               <input
                 v-model="user.email"
                 type="email"
-                placeholder="Email"
+                v-bind:placeholder="$t('auth.email')"
                 class="form-control"
               >
             </div>
@@ -53,7 +53,7 @@
               <input
                 v-model="user.password"
                 type="password"
-                placeholder="Password"
+                v-bind:placeholder="$t('auth.password')"
                 class="form-control"
               >
             </div>
@@ -66,21 +66,21 @@
               <input
                 v-model="user.passwordConfirm"
                 type="password"
-                placeholder="Confirm password"
+                v-bind:placeholder="$t('auth.password_confirm')"
                 class="form-control"
               >
             </div>
           </div>
           <div class="form-group">
             <button class="btn btn-primary">
-              Register
+              {{ $t('auth.register') }}
             </button>
           </div>
         </form>
       </div>
       <div slot="footer">
-        Already got an account?
-        <router-link :to="{ name: 'login.index' }">Login</router-link>
+        {{ $t('auth.already_account') }}
+        <router-link :to="{ name: 'login.index' }">{{ $t('auth.login') }}</router-link>
       </div>
     </v-panel>
   </v-layout>

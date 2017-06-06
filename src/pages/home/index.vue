@@ -4,39 +4,25 @@
       contextual-style="primary"
     >
       <h1 class="panel-title" slot="heading">
-        {{ $t("auth.welcome") }}
+        {{ $t("general.welcome") }}
       </h1>
       <div slot="body">
         <p>
-          Get started with the Vue 2 boilerplate
+          {{ $t("general.welcome_text") }}
         </p>
         <p>
-          For questions, contact me:
+          {{ $t("general.bug_notice") }}
         </p>
-        <p>
-          <a class="btn btn-primary" href="http://gitter.im/petervmeijgaard" target="_blank">
-            <i class="fa fa-github fa-fw" aria-hidden="true"></i>
-            <span class="padding-left">Gitter</span>
-          </a>
-          <a class="btn btn-primary" href="http://github.com/petervmeijgaard" target="_blank">
-            <i class="fa fa-github fa-fw" aria-hidden="true"></i>
-            <span class="padding-left">GitHub</span>
-          </a>
-          <a class="btn btn-primary" href="http://twitter.com/petervmeijgaard" target="_blank">
-            <i class="fa fa-twitter fa-fw" aria-hidden="true"></i>
-            <span class="padding-left">Twitter</span>
-          </a>
-        </p>
-        <p>
-          For bugs, see:
-        </p>
-        <a class="btn btn-primary" href="https://github.com/petervmeijgaard/vue-2.0-boilerplate/issues" target="_blank">
+        <a class="btn btn-primary" href="https://github.com/BerniWittmann/mampf-prototype/issues" target="_blank">
           <i class="fa fa-github fa-fw" aria-hidden="true"></i>
-          <span class="padding-left">GitHub</span>
+          <span class="padding-left">{{ $t("general.github") }}</span>
+        </a>
+        <a class="btn btn-primary" href="mailto:b.wittmann@mail.de">
+          <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
+          <span class="padding-left">{{ $t("general.email") }}</span>
         </a>
       </div>
-      <div slot="footer">
-        Made with love by Vivid Web
+      <div slot="footer" v-html="$t('general.by_text')">
       </div>
     </v-panel>
   </v-layout>
