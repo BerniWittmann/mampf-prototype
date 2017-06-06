@@ -13,7 +13,7 @@
             class="navbar-brand"
             :to="{ name: 'home.index' }"
           >
-            My App
+            Mampf
           </router-link>
         </div>
 

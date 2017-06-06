@@ -1,5 +1,5 @@
 /* ============
- * Dutch Language File
+ * German Language File
  * ============
  *
  * An example language file.

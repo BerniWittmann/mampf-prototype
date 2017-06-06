@@ -4,7 +4,7 @@
       contextual-style="primary"
     >
       <h1 class="panel-title" slot="heading">
-        Welcome!
+        {{ $t("auth.welcome") }}
       </h1>
       <div slot="body">
         <p>
