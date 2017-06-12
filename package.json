@@ -6,6 +6,7 @@
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
+    "postinstall": "npm rebuild node-sass",
     "heroku-postbuild": "node build/build.js"
   },
   "repository": {
