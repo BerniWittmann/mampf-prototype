@@ -6,10 +6,10 @@
 
 <script>
   /* ============
-   * Account Index Page
+   * Meal Index Page
    * ============
    *
-   * Page where the user can view the account information.
+   * Page where the user can view the available meals.
    */
 
   export default {

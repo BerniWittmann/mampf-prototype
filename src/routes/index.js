@@ -47,6 +47,16 @@ export default [
       auth: true,
     },
   },
+  {
+    path: '/meals/add',
+    name: 'meals.add',
+    component: require('@/pages/meals/add.vue'),
+
+    // If the user needs to be authenticated to view this page
+    meta: {
+      auth: true,
+    },
+  },
 
   // Login
   {

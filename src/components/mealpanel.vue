@@ -15,7 +15,7 @@
           <span class="meal-panel-footer-author-name">
             {{this.meal.author.name}}
           </span>
-          <span class="meal-panel-footer-author-rating">
+          <span class="meal-panel-footer-author-rating" v-if="this.meal.author.rating">
             <v-rating v-bind:stars="this.meal.author.rating" v-bind:size="14"></v-rating>
           </span>
         </span>
@@ -55,7 +55,7 @@
     },
     computed: {
       imageUrl() {
-        if (!this.meal.image || !this.meal.image.url) return undefined;
+        if (!this.meal.image || !this.meal.image.url) return './static/images/meals/empty.png';
 
         return this.meal.image.url;
       },

@@ -28,12 +28,12 @@ export default class MealTransformer extends Transformer {
         image: ImageTransformer.fetch(meal.author.image),
       },
       image: ImageTransformer.fetch(meal.image),
-      location: {
+      location: meal.location ? {
         displayName: meal.location.display_name,
-      },
+      } : undefined,
       guests: meal.guests,
       date: meal.date ? moment(meal.date, moment.ISO_8601) : undefined,
-      freePlaces: meal.freePlaces ? parseInt(meal.freePlaces, 10) : undefined,
+      freePlaces: meal.free_places ? parseInt(meal.free_places, 10) : undefined,
       price: meal.price ? parseFloat(meal.price) : undefined,
     };
   }

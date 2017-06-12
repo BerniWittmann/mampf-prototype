@@ -1,4 +1,13 @@
 {
   "free_places": "Noch {count} Platz frei | Noch {count} Plätze frei",
-  "no_free_places": "Keine Plätze mehr frei"
+  "no_free_places": "Keine Plätze mehr frei",
+  "name": "Name",
+  "name_label": "Der Name des Gerichts",
+  "create": "Erstellen",
+  "places": "Plätze",
+  "places_label": "Anzahl an möglichen Gästen",
+  "price": "Preis",
+  "price_label": "Preis pro Gast",
+  "date": "Datum",
+  "date_label": "Datum des Essens"
 }

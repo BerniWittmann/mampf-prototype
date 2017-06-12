@@ -10,7 +10,7 @@ import { ADD, STORE, SET_CURRENT } from './mutation-types';
 
 export default {
   [ADD](state, meal) {
-    state.meals = state.meals.push(meal);
+    state.meals.push(meal);
   },
   [STORE](state, meals) {
     state.meals = meals;
