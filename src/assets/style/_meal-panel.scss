@@ -5,7 +5,7 @@ $meat-panel-size: 300px;
   margin-right: 20px;
 
   .meal-panel-body {
-    padding: 5px;
+    padding: 5px 5px 0;
     width: $meat-panel-size;
     height: $meat-panel-size;
 
@@ -62,8 +62,26 @@ $meat-panel-size: 300px;
     }
 
     .meal-panel-footer-info {
-      .meal-panel-footer-info-price {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-end;
 
+      .meal-panel-footer-info-price {
+        font-size: 14px;
+      }
+
+      .meal-panel-footer-info-places {
+        color: #555555;
+        font-size: 13px;
+
+        &.highlighted {
+          color: #b6000c;
+        }
+
+        &.booked-out {
+          color: #aaaaaa;
+        }
       }
     }
   }
