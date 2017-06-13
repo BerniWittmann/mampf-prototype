@@ -2,5 +2,6 @@
   "home": "Home",
   "account": "Account",
   "meals": "Essen",
-  "meals_add": "Anbieten"
+  "meals_add": "Anbieten",
+  "logout": "Ausloggen"
 }

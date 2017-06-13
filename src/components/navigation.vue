@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default navbar-mampf">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -17,43 +17,14 @@
       </div>
 
       <div class="collapse navbar-collapse" id="navbar">
-        <ul class="nav navbar-nav">
-          <router-link
-            :to="{ name: 'home.index' }"
-            active-class="active"
-            class="nav-item"
-            tag="li"
-          >
-            <a>
-              {{ $t('nav.home') }}
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#" @click.prevent="logout">
+              {{ $t('nav.logout') }}
             </a>
-          </router-link>
+          </li>
         </ul>
-        <ul class="nav navbar-nav">
-          <router-link
-            :to="{ name: 'meals.index' }"
-            active-class="active"
-            class="nav-item"
-            tag="li"
-          >
-            <a>
-              {{ $t('nav.meals') }}
-            </a>
-          </router-link>
-        </ul>
-        <ul class="nav navbar-nav">
-          <router-link
-            :to="{ name: 'meals.add' }"
-            active-class="active"
-            class="nav-item"
-            tag="li"
-          >
-            <a>
-              {{ $t('nav.meals_add') }}
-            </a>
-          </router-link>
-        </ul>
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right">
           <router-link
             :to="{ name: 'account.index' }"
             active-class="active"
@@ -65,12 +36,17 @@
             </a>
           </router-link>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="#" @click.prevent="logout">
-              <i class="fa fa-sign-out"></i>
+        <ul class="nav navbar-right navbar-form">
+          <router-link
+            :to="{ name: 'meals.add' }"
+            class="nav-item nav-item-button"
+            tag="li"
+          >
+            <a class="btn btn-primary btn-sm">
+              <i class="fa fa-plus"></i>
+              {{ $t('nav.meals_add') }}
             </a>
-          </li>
+          </router-link>
         </ul>
       </div>
     </div>

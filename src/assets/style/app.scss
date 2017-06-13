@@ -3,6 +3,7 @@
 @import "user-avatar";
 @import "rating";
 @import "home";
+@import "nav";
 
 .padding-left {
   padding-left: 8px;
@@ -12,8 +13,4 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.no-nav-margin {
-  margin-bottom: 0;
 }

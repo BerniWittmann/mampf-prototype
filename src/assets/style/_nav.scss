@@ -1,0 +1,29 @@
+nav.navbar.navbar-mampf {
+  &.no-nav-margin {
+    margin-bottom: 0;
+  }
+
+  background-color: #ffffff;
+  border: none;
+
+  .navbar-form {
+
+  }
+
+  .nav-item-button a{
+    padding: 5px 10px;
+
+    &:hover {
+      color: #fff;
+      background-color: #286090;
+      border-color: #204d74;
+    }
+  }
+
+  .nav-item {
+
+    &.active a {
+      background-color: transparent;
+    }
+  }
+}
