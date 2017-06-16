@@ -17,14 +17,14 @@
       </div>
 
       <div class="collapse navbar-collapse" id="navbar">
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" v-if="isLoggedIn">
           <li>
             <a href="#" @click.prevent="logout">
               {{ $t('nav.logout') }}
             </a>
           </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
+        <ul class="nav navbar-nav navbar-right" v-if="isLoggedIn">
           <router-link
             :to="{ name: 'account.index' }"
             active-class="active"
@@ -33,6 +33,18 @@
           >
             <a>
               {{ $t('nav.account') }}
+            </a>
+          </router-link>
+        </ul>
+        <ul class="nav navbar-nav navbar-right" v-if="!isLoggedIn">
+          <router-link
+            :to="{ name: 'login.index' }"
+            active-class="active"
+            class="nav-item"
+            tag="li"
+          >
+            <a>
+              {{ $t('nav.login') }}
             </a>
           </router-link>
         </ul>
@@ -68,6 +80,12 @@
     methods: {
       logout() {
         authService.logout();
+      },
+    },
+
+    computed: {
+      isLoggedIn() {
+        return this.$store.getters['auth/isLoggedIn'];
       },
     },
   };

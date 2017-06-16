@@ -40,8 +40,8 @@
       // fetch the data from the API
       if (this.$store.state.auth.authenticated) {
         accountService.find();
-        mealService.get();
       }
+      mealService.get();
     },
   };
 </script>

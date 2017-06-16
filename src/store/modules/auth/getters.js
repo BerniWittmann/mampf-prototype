@@ -6,4 +6,8 @@
  * auth module.
  */
 
-export default {};
+export default {
+  isLoggedIn(state) {
+    return state.authenticated;
+  },
+};

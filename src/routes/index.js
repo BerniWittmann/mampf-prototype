@@ -20,7 +20,7 @@ export default [
 
     // If the user needs to be authenticated to view this page
     meta: {
-      auth: true,
+      auth: false,
     },
   },
 
@@ -44,7 +44,7 @@ export default [
 
     // If the user needs to be authenticated to view this page
     meta: {
-      auth: true,
+      auth: false,
     },
   },
   {

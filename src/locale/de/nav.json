@@ -3,5 +3,6 @@
   "account": "Account",
   "meals": "Essen",
   "meals_add": "Anbieten",
-  "logout": "Ausloggen"
+  "logout": "Ausloggen",
+  "login": "Einloggen"
 }
