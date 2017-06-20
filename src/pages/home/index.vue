@@ -56,7 +56,10 @@
             </v-link-button>
           </el-col>
         </el-row>
-        <br>
+      </el-col>
+    </el-row>
+    <el-row class="home-part">
+      <el-col :span="24">
         <p v-html="$t('general.by_text')"></p>
       </el-col>
     </el-row>

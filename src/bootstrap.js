@@ -178,6 +178,16 @@ Vue.use(ElementUI, {
  */
 require('font-awesome/less/font-awesome.less');
 
+/* ============
+ * Animate.css
+ * ============
+ *
+ * Require Animate.css.
+ *
+ * https://daneden.github.io/animate.css/
+ */
+require('animate.css');
+
 
 /* ============
  * Styling

@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/BerniWittmann/mampf-prototype#readme",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "axios": "^0.16.1",
     "bootstrap": "^3.3.7",
     "connect": "^3.6.2",
