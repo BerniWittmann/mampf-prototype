@@ -12,6 +12,7 @@
         <v-link-button
           :route="{ name: 'meals.index' }"
           type="primary"
+          size="large"
         >Essen finden
         </v-link-button>
       </el-col>
@@ -27,6 +28,7 @@
         <v-link-button
           :route="{ name: 'meals.add' }"
           type="primary"
+          size="large"
         >Essen anbieten
         </v-link-button>
       </el-col>
