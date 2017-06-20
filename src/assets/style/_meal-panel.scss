@@ -3,6 +3,7 @@ $meat-panel-body-padding: 0px;
 
 .meal-panel {
   width: $meat-panel-size;
+  cursor: pointer;
 
   .meal-panel-body {
     padding: $meat-panel-body-padding $meat-panel-body-padding 0;
@@ -56,7 +57,13 @@ $meat-panel-body-padding: 0px;
         }
 
         .meal-panel-footer-author-rating {
+          padding-top: 4px;
 
+          .el-rate__icon {
+            font-size: 14px;
+            margin-right: 0;
+            cursor: pointer;
+          }
         }
       }
 

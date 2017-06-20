@@ -16,7 +16,7 @@
             {{this.meal.author.name}}
           </span>
           <span class="meal-panel-footer-author-rating" v-if="this.meal.author.rating">
-            <v-rating v-bind:stars="this.meal.author.rating" v-bind:size="14"></v-rating>
+            <el-rate v-model="this.meal.author.rating" disabled></el-rate>
           </span>
         </span>
       </span>
@@ -45,7 +45,6 @@
   export default {
     components: {
       VUserAvatar: require('@/components/useravatar.vue'),
-      VRating: require('@/components/rating.vue'),
     },
     props: {
       meal: {
