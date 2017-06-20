@@ -2,14 +2,12 @@
   <div>
     <v-navigation></v-navigation>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 container-tiles">
-          <!-- Content will be placed here -->
-          <slot></slot>
-        </div>
-      </div>
-    </div>
+    <el-row>
+      <el-col :span="24" class="container-tiles">
+        <!-- Content will be placed here -->
+        <slot></slot>
+      </el-col>
+    </el-row>
 
   </div>
 </template>

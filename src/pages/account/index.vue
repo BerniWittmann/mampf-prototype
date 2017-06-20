@@ -1,42 +1,32 @@
 <template>
   <v-layout>
-    <v-panel contextual-style="primary">
-      <h1 class="panel-title"
-          slot="heading"
-      >
-        {{ $t('account.my_account') }}
-      </h1>
-      <div slot="body">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th>
-              {{ $t('account.first_name') }}
-            </th>
-            <th>
-              {{ $t('account.last_name') }}
-            </th>
-            <th>
-              {{ $t('account.email') }}
-            </th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>
-              {{$store.state.account.firstName}}
-            </td>
-            <td>
-              {{$store.state.account.lastName}}
-            </td>
-            <td>
-              {{$store.state.account.email}}
-            </td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
-    </v-panel>
+    <el-row>
+      <el-col :span="12" :offset="6">
+        <v-panel contextual-style="primary">
+          <h1 class="panel-title"
+              slot="header"
+          >
+            {{ $t('account.my_account') }}
+          </h1>
+          <div slot="body">
+            <el-table :data="[account]" class="table table-striped">
+              <el-table-column
+                prop="firstName"
+                :label="$t('account.first_name')">
+              </el-table-column>
+              <el-table-column
+                prop="lastName"
+                :label="$t('account.last_name')">
+              </el-table-column>
+              <el-table-column
+                prop="email"
+                :label="$t('account.email')">
+              </el-table-column>
+            </el-table>
+          </div>
+        </v-panel>
+      </el-col>
+    </el-row>
   </v-layout>
 </template>
 
@@ -50,8 +40,14 @@
 
   export default {
     components: {
-      VLayout: require('@/layouts/default.vue'),
+      VLayout: require('@/layouts/background.vue'),
       VPanel: require('@/components/panel.vue'),
+    },
+
+    computed: {
+      account() {
+        return this.$store.state.account;
+      },
     },
   };
 </script>

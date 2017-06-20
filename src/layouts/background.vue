@@ -1,22 +1,18 @@
 <template>
-  <div>
+  <div class="full-size-background">
     <v-navigation></v-navigation>
 
-    <el-row>
-      <el-col :span="24">
-        <!-- Content will be placed here -->
-        <slot></slot>
-      </el-col>
-    </el-row>
+    <!-- Content will be placed here -->
+    <slot></slot>
   </div>
 </template>
 
 <script>
   /* ============
-   * Default Layout
+   * Background Layout
    * ============
    *
-   * Used for the home and account pages.
+   * Used for the login and register pages. Has a big background image
    *
    * Layouts are used to store a lot of shared code.
    * This way the app stays clean.

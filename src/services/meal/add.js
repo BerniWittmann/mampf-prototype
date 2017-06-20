@@ -12,7 +12,7 @@ const success = (meal) => {
     name: meal.name,
     price: parseFloat(meal.price),
     free_places: parseInt(meal.places, 10),
-    date: meal.date ? moment(meal.date, 'YYYY-MM-DD').toISOString() : undefined,
+    date: meal.date ? moment(meal.date, 'DD.MM.YYYY HH:mm').toISOString() : undefined,
     id: guid(),
     guests: [],
     author: {

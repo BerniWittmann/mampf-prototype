@@ -1,40 +1,38 @@
 <template>
   <v-layout>
-    <div class="row home-part home-part-image">
+    <el-row class="home-part home-part-image">
       <div class="home-header-image">
       </div>
-    </div>
+    </el-row>
 
-    <div class="row home-part">
-      <div class="col-md-12">
+    <el-row class="home-part">
+      <el-col :span="24">
         <h2>Bringt Leben an den Esstisch</h2>
         <h4>Mit Mampf essen Sie gemeinsam und sparen dabei sogar noch</h4>
-        <router-link
-          :to="{ name: 'meals.index' }"
-          class="btn btn-primary"
-          tag="a"
+        <v-link-button
+          :route="{ name: 'meals.index' }"
+          type="primary"
         >Essen finden
-        </router-link>
-      </div>
-    </div>
+        </v-link-button>
+      </el-col>
+    </el-row>
 
-    <div class="row home-part home-part-split-vertical">
-      <div class="col-md-6">
+    <el-row :gutter="20" class="home-part">
+      <el-col :span="12">
         <div class="home-subheader-image"></div>
-      </div>
-      <div class="col-md-6">
+      </el-col>
+      <el-col :span="12">
         <h3>Gemeinsam essen lohnt sich</h3>
         <p class="lead">Essen anbieten. Gäste einladen. Kosten sparen</p>
-        <router-link
-          :to="{ name: 'meals.add' }"
-          class="btn btn-primary"
-          tag="a"
+        <v-link-button
+          :route="{ name: 'meals.add' }"
+          type="primary"
         >Essen anbieten
-        </router-link>
-      </div>
-    </div>
-    <div class="row home-part">
-      <div class="col-md-12">
+        </v-link-button>
+      </el-col>
+    </el-row>
+    <el-row class="home-part">
+      <el-col :span="12">
         <h3>{{ $t("general.welcome") }}</h3>
         <p>
           {{ $t("general.welcome_text") }}
@@ -42,20 +40,24 @@
         <p>
           {{ $t("general.bug_notice") }}
         </p>
-        <div>
-          <a class="btn btn-primary" href="https://github.com/BerniWittmann/mampf-prototype/issues" target="_blank">
-            <i class="fa fa-github fa-fw" aria-hidden="true"></i>
-            <span class="padding-left">{{ $t("general.github") }}</span>
-          </a>
-          <a class="btn btn-primary" href="mailto:b.wittmann@mail.de">
-            <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
-            <span class="padding-left">{{ $t("general.email") }}</span>
-          </a>
-        </div>
+        <el-row :gutter="20">
+          <el-col :span="8">
+            <v-link-button type="primary" href="https://github.com/BerniWittmann/mampf-prototype/issues" target="_blank">
+              <i class="fa fa-github fa-fw" aria-hidden="true"></i>
+              <span class="padding-left">{{ $t("general.github") }}</span>
+            </v-link-button>
+          </el-col>
+          <el-col :span="8">
+            <v-link-button type="primary" href="mailto:b.wittmann@mail.de">
+              <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
+              <span class="padding-left">{{ $t("general.email") }}</span>
+            </v-link-button>
+          </el-col>
+        </el-row>
         <br>
         <p v-html="$t('general.by_text')"></p>
-      </div>
-    </div>
+      </el-col>
+    </el-row>
   </v-layout>
 </template>
 
@@ -70,6 +72,7 @@
   export default {
     components: {
       VLayout: require('@/layouts/fullWidth.vue'),
+      VLinkButton: require('@/components/linkButton.vue'),
     },
   };
 </script>

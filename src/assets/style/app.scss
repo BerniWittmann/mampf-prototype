@@ -1,4 +1,6 @@
 @import "mixins";
+@import "overrides";
+@import "panel";
 @import "meal-panel";
 @import "user-avatar";
 @import "rating";
@@ -10,7 +12,20 @@
 }
 
 .container-tiles {
+  margin-left: 20px;
+  margin-right: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  & > * {
+    margin: 10px;
+  }
+}
+
+.full-size-background {
+  background: url('../../../static/images/home_header.jpg') center;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }

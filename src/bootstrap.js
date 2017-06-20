@@ -142,15 +142,30 @@ window.$ = window.jQuery = jQuery;
 
 
 /* ============
- * Bootstrap
+ * Normalize.cc
  * ============
  *
- * Require bootstrap.
+ * Require Normalize
  *
- * http://getbootstrap.com/
+ * http://necolas.github.io/normalize.css/
  */
-require('bootstrap');
-require('bootstrap/less/bootstrap.less');
+
+import 'normalize.css';
+
+/* ============
+ * Element UI
+ * ============
+ *
+ * Require UI Suite.
+ *
+ * http://element.eleme.io
+ */
+import ElementUI from 'element-ui';
+import './assets/theme/index.css';
+
+Vue.use(ElementUI, {
+  i18n: key => i18n.t(key),
+});
 
 
 /* ============

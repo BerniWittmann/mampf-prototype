@@ -1,12 +1,10 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <!-- Content will be placed here -->
-        <slot></slot>
-      </div>
-    </div>
-  </div>
+  <el-row>
+    <el-col :span="12" :offset="6">
+      <!-- Content will be placed here -->
+      <slot></slot>
+    </el-col>
+  </el-row>
 </template>
 
 <script>

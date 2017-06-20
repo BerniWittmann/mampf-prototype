@@ -1,70 +1,20 @@
 <template>
-  <nav class="navbar navbar-default navbar-mampf">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <router-link
-          class="navbar-brand"
-          :to="{ name: 'home.index' }"
-        >
-          Mampf
-        </router-link>
-      </div>
-
-      <div class="collapse navbar-collapse" id="navbar">
-        <ul class="nav navbar-nav navbar-right" v-if="isLoggedIn">
-          <li>
-            <a href="#" @click.prevent="logout">
-              {{ $t('nav.logout') }}
-            </a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" v-if="isLoggedIn">
-          <router-link
-            :to="{ name: 'account.index' }"
-            active-class="active"
-            class="nav-item"
-            tag="li"
-          >
-            <a>
-              {{ $t('nav.account') }}
-            </a>
-          </router-link>
-        </ul>
-        <ul class="nav navbar-nav navbar-right" v-if="!isLoggedIn">
-          <router-link
-            :to="{ name: 'login.index' }"
-            active-class="active"
-            class="nav-item"
-            tag="li"
-          >
-            <a>
-              {{ $t('nav.login') }}
-            </a>
-          </router-link>
-        </ul>
-        <ul class="nav navbar-right navbar-form">
-          <router-link
-            :to="{ name: 'meals.add' }"
-            class="nav-item nav-item-button"
-            tag="li"
-          >
-            <a class="btn btn-primary btn-sm">
-              <i class="fa fa-plus"></i>
-              {{ $t('nav.meals_add') }}
-            </a>
-          </router-link>
-        </ul>
-      </div>
+  <el-menu :default-active="this.activeRoute" mode="horizontal" :router="true" class="nav">
+    <router-link
+      :to="{ name: 'home.index' }"
+      class="nav-image-wrap"
+      tag="a"
+    >
+      <img class="nav-image" src="static/images/logo.png" :alt="$t('nav.name')">
+    </router-link>
+    <div class="nav-right">
+      <el-menu-item index="meals.add" :route="{ name: 'meals.add' }"><el-button type="primary" size="small"><i class="fa fa-plus"></i> {{ $t('nav.meals_add') }}</el-button></el-menu-item>
+      <el-menu-item v-if="isLoggedIn" index="account.index" :route="{ name: 'account.index' }">{{ $t('nav.account') }}</el-menu-item>
+      <el-menu-item @click="logout" v-if="isLoggedIn" index="login.logout">{{ $t('nav.logout') }}</el-menu-item>
+      <el-menu-item v-if="!isLoggedIn" index="login.index" :route="{ name: 'login.index' }">{{ $t('nav.login') }}</el-menu-item>
     </div>
-  </nav>
+  </el-menu>
 </template>
-
 <script>
   /* ============
    * Navigation Component
@@ -86,6 +36,9 @@
     computed: {
       isLoggedIn() {
         return this.$store.getters['auth/isLoggedIn'];
+      },
+      activeRoute() {
+        return this.$route.name;
       },
     },
   };

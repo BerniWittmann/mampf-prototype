@@ -1,71 +1,44 @@
 <template>
   <v-layout>
-    <h2 class="text-center">Ein Essen anbieten</h2>
-    <br>
-    <form @submit.prevent="add()" class="form-horizontal">
-      <div class="form-group">
-        <label for="meal-name" class="col-sm-3 control-label">
-          {{ $t('meal.name_label') }}
-        </label>
-        <div class="col-sm-9">
-          <input
-            v-model="meal.name"
-            type="text"
-            id="meal-name"
-            v-bind:placeholder="$t('meal.name')"
-            class="form-control col-sm-9"
-          >
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="meal-places" class="col-sm-3 control-label">
-          {{ $t('meal.places_label') }}
-        </label>
-        <div class="col-sm-9">
-          <input
-            v-model="meal.places"
-            type="number"
-            id="meal-places"
-            v-bind:placeholder="$t('meal.places')"
-            class="form-control col-sm-9"
-          >
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="meal-price" class="col-sm-3 control-label">
-          {{ $t('meal.price_label') }}
-        </label>
-        <div class="col-sm-9">
-          <input
-            v-model="meal.price"
-            type="number"
-            step="any"
-            id="meal-price"
-            v-bind:placeholder="$t('meal.price')"
-            class="form-control col-sm-9"
-          >
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="meal-date" class="col-sm-3 control-label">
-          {{ $t('meal.date_label') }}
-        </label>
-        <div class="col-sm-9">
-          <input
-            v-model="meal.date"
-            type="date"
-            id="meal-date"
-            v-bind:placeholder="$t('meal.date')"
-            class="form-control col-sm-9"
-          >
-        </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary">
-          {{ $t('meal.create') }}
-        </button>
-      </div>
-    </form>
+    <el-row>
+      <el-col :span="12" :offset="6">
+        <v-panel>
+          <h1 class="panel-title" slot="header">
+            <h2 class="text-center">Ein Essen anbieten</h2>
+          </h1>
+          <div slot="body">
+            <el-form ref="form" :model="meal" label-width="200px" @submit.prevent="add()">
+              <el-form-item :label="$t('meal.name_label')">
+                <el-input v-model="meal.name"
+                          :placeholder="$t('meal.name')"
+                          type="text"></el-input>
+              </el-form-item>
+              <el-form-item :label="$t('meal.places_label')">
+                <el-input-number v-model="meal.places"
+                                 :placeholder="$t('meal.places')"
+                                 :min="1"
+                                 type="number"></el-input-number>
+              </el-form-item>
+              <el-form-item :label="$t('meal.price_label')">
+                <el-input v-model="meal.price"
+                                 :placeholder="$t('meal.price')"
+                                 step="any"
+                                 min="0"
+                                 type="number"></el-input>
+              </el-form-item>
+              <el-form-item :label="$t('meal.datetime_label')">
+                <el-date-picker type="datetime" :placeholder="$t('meal.datetime')" v-model="meal.date"
+                                format="dd.MM.yyyy HH:mm" :picker-options="pickerOptions"
+                                style="width: 100%;"></el-date-picker>
+              </el-form-item>
+              <el-form-item>
+                <el-button type="primary" @click="add">{{ $t('meal.create') }}</el-button>
+              </el-form-item>
+            </el-form>
+          </div>
+        </v-panel>
+      </el-col>
+    </el-row>
   </v-layout>
 </template>
 
@@ -77,11 +50,14 @@
    * Page where the user can add a new meal.
    */
 
+  import moment from 'moment';
+
   import mealService from '../../services/meal';
 
   export default {
     components: {
-      VLayout: require('@/layouts/default.vue'),
+      VLayout: require('@/layouts/background.vue'),
+      VPanel: require('@/components/panel.vue'),
     },
 
     data() {
@@ -91,6 +67,11 @@
           places: null,
           price: null,
           date: null,
+        },
+        pickerOptions: {
+          disabledDate(date) {
+            return moment(date).isBefore(moment(), 'minute');
+          },
         },
       };
     },

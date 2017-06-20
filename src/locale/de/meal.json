@@ -9,5 +9,7 @@
   "price": "Preis",
   "price_label": "Preis pro Gast",
   "date": "Datum",
-  "date_label": "Datum des Essens"
+  "date_label": "Datum des Essens",
+  "datetime": "Datum und Uhrzeit",
+  "datetime_label": "Datum des Essens"
 }

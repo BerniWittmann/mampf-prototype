@@ -1,12 +1,12 @@
 <template>
-  <div class="panel panel-default meal-panel">
-    <div class="panel-body meal-panel-body">
+  <el-card class="meal-panel" :body-style="{ padding: '0px' }">
+    <div class="meal-panel-body">
       <img class="meal-panel-body-image" v-if="this.imageUrl" v-bind:src="this.imageUrl">
       <div class="meal-panel-body-text-wrap">
         <span class="meal-panel-body-text">{{this.meal.name}}</span>
       </div>
     </div>
-    <div class="panel-footer meal-panel-footer">
+    <div class="meal-panel-footer">
       <span class="meal-panel-footer-author">
         <span class="meal-panel-footer-author-image">
           <v-user-avatar v-bind:user="this.meal.author" v-bind:size="45"></v-user-avatar>
@@ -29,7 +29,7 @@
         </span>
       </span>
     </div>
-  </div>
+  </el-card>
 </template>
 
 <script>

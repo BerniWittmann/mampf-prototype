@@ -1,7 +1,7 @@
 <template>
-  <div :class="classNames">
-    <div class="panel-heading" v-if="hasSlot('heading')">
-      <slot name="heading"></slot>
+  <el-card :class="classNames">
+    <div class="panel-heading" v-if="hasSlot('header')">
+      <slot name="header"></slot>
     </div>
     <div class="panel-body" v-if="hasSlot('body')">
       <slot name="body"></slot>
@@ -9,7 +9,7 @@
     <div class="panel-footer" v-if="hasSlot('footer')">
       <slot name="footer"></slot>
     </div>
-  </div>
+  </el-card>
 </template>
 
 <script>

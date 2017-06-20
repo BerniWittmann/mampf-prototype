@@ -1,88 +1,68 @@
 <template>
   <v-layout>
-    <v-panel contextual-style="primary">
-      <h1 class="panel-title" slot="heading">
-        {{ $t('auth.registration') }}
-      </h1>
-      <div slot="body">
-        <form @submit.prevent="register(user)">
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon">
-                <i class="fa fa-user fa-fw"></i>
-              </div>
-              <input
-                v-model="user.firstName"
-                type="text"
-                v-bind:placeholder="$t('auth.first_name')"
-                class="form-control"
-              >
-            </div>
+    <el-row>
+      <el-col :span="8" :offset="8">
+        <v-panel contextual-style="primary">
+          <h1 class="panel-title" slot="header">
+            {{ $t('auth.registration') }}
+          </h1>
+          <div slot="body">
+            <form @submit.prevent="register(user)">
+              <el-row :gutter="20">
+                <el-col :span="24">
+                  <el-input v-model="user.firstName"
+                            type="text"
+                            v-bind:placeholder="$t('auth.first_name')"></el-input>
+                </el-col>
+              </el-row>
+              <el-row :gutter="20">
+                <el-col :span="24">
+                  <el-input v-model="user.lastName"
+                            type="text"
+                            v-bind:placeholder="$t('auth.last_name')"></el-input>
+                </el-col>
+              </el-row>
+              <el-row :gutter="20">
+                <el-col :span="24">
+                  <el-input v-model="user.email"
+                            type="email"
+                            v-bind:placeholder="$t('auth.email')"></el-input>
+                </el-col>
+              </el-row>
+              <el-row :gutter="20">
+                <el-col :span="24">
+                  <el-input v-model="user.password"
+                            type="password"
+                            v-bind:placeholder="$t('auth.password')"></el-input>
+                </el-col>
+              </el-row>
+              <el-row :gutter="20">
+                <el-col :span="24">
+                  <el-input v-model="user.passwordConfirm"
+                            type="password"
+                            v-bind:placeholder="$t('auth.password_confirm')"></el-input>
+                </el-col>
+              </el-row>
+              <el-row :gutter="20">
+                <el-col :span="24">
+                  <el-button type="primary"
+                             native-type="submit">{{ $t('auth.register') }}
+                  </el-button>
+                </el-col>
+              </el-row>
+            </form>
           </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon">
-                <i class="fa fa-user fa-fw"></i>
-              </div>
-              <input
-                v-model="user.lastName"
-                type="text"
-                v-bind:placeholder="$t('auth.last_name')"
-                class="form-control"
-              >
-            </div>
+          <div slot="footer">
+            <el-row :gutter="20">
+              <el-col :span="24">
+                {{ $t('auth.already_account') }}
+                <router-link :to="{ name: 'login.index' }">{{ $t('auth.login') }}</router-link>
+              </el-col>
+            </el-row>
           </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon">
-                <i class="fa fa-envelope fa-fw"></i>
-              </div>
-              <input
-                v-model="user.email"
-                type="email"
-                v-bind:placeholder="$t('auth.email')"
-                class="form-control"
-              >
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon">
-                <i class="fa fa-lock fa-fw"></i>
-              </div>
-              <input
-                v-model="user.password"
-                type="password"
-                v-bind:placeholder="$t('auth.password')"
-                class="form-control"
-              >
-            </div>
-          </div>
-          <div class="form-group">
-            <div class="input-group">
-              <div class="input-group-addon">
-                <i class="fa fa-lock fa-fw"></i>
-              </div>
-              <input
-                v-model="user.passwordConfirm"
-                type="password"
-                v-bind:placeholder="$t('auth.password_confirm')"
-                class="form-control"
-              >
-            </div>
-          </div>
-          <div class="form-group">
-            <button class="btn btn-primary">
-              {{ $t('auth.register') }}
-            </button>
-          </div>
-        </form>
-      </div>
-      <div slot="footer">
-        {{ $t('auth.already_account') }}
-        <router-link :to="{ name: 'login.index' }">{{ $t('auth.login') }}</router-link>
-      </div>
-    </v-panel>
+        </v-panel>
+      </el-col>
+    </el-row>
   </v-layout>
 </template>
 
@@ -117,7 +97,7 @@
     },
 
     components: {
-      VLayout: require('@/layouts/minimal.vue'),
+      VLayout: require('@/layouts/background.vue'),
       VPanel: require('@/components/panel.vue'),
     },
   };

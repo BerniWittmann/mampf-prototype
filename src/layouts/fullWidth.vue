@@ -2,7 +2,7 @@
   <div>
     <v-navigation class="no-nav-margin"></v-navigation>
 
-    <div class="container-fluid">
+    <div>
       <!-- Content will be placed here -->
       <slot></slot>
     </div>

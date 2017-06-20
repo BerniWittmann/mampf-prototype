@@ -1,25 +1,24 @@
 $meat-panel-size: 300px;
+$meat-panel-body-padding: 0px;
 
 .meal-panel {
   width: $meat-panel-size;
-  margin-right: 10px;
-  margin-left: 10px;
 
   .meal-panel-body {
-    padding: 5px 5px 0;
-    width: $meat-panel-size;
+    padding: $meat-panel-body-padding $meat-panel-body-padding 0;
+    width: inherit;
     height: $meat-panel-size;
 
     .meal-panel-body-image {
-      width: calc(#{$meat-panel-size} - 10px);
-      height: calc(#{$meat-panel-size} - 10px);
+      width: calc(100% - 2 * #{$meat-panel-body-padding});
+      height: calc(100% - 2 * #{$meat-panel-body-padding});
     }
 
     .meal-panel-body-text-wrap {
       position: relative;
       top: -50px;
       height: 50px;
-      width: calc(#{$meat-panel-size} - 10px);
+      width: calc(#{$meat-panel-size} - 2 * #{$meat-panel-body-padding});
       border-top: 1px solid #ddd;
       background: -moz-linear-gradient(top, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
       background: -webkit-linear-gradient(top, rgba(255,255,255,0.8) 0%,rgba(255,255,255,1) 80%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -36,6 +35,7 @@ $meat-panel-size: 300px;
   }
 
   .meal-panel-footer {
+    padding: 5px 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
