@@ -32,7 +32,7 @@
       </el-col>
     </el-row>
     <el-row class="home-part">
-      <el-col :span="12">
+      <el-col :span="24">
         <h3>{{ $t("general.welcome") }}</h3>
         <p>
           {{ $t("general.welcome_text") }}
@@ -41,13 +41,13 @@
           {{ $t("general.bug_notice") }}
         </p>
         <el-row :gutter="20">
-          <el-col :span="8">
+          <el-col :lg="4" :md="6" :sm="8" :xs="12">
             <v-link-button type="primary" href="https://github.com/BerniWittmann/mampf-prototype/issues" target="_blank">
               <i class="fa fa-github fa-fw" aria-hidden="true"></i>
               <span class="padding-left">{{ $t("general.github") }}</span>
             </v-link-button>
           </el-col>
-          <el-col :span="8">
+          <el-col :lg="4" :md="6" :sm="8" :xs="12">
             <v-link-button type="primary" href="mailto:b.wittmann@mail.de">
               <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
               <span class="padding-left">{{ $t("general.email") }}</span>
