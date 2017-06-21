@@ -33,6 +33,7 @@ export default class MealTransformer extends Transformer {
       } : undefined,
       guests: meal.guests,
       date: meal.date ? moment(meal.date, moment.ISO_8601) : undefined,
+      displayDate: meal.date ? moment().to(meal.date) : undefined,
       freePlaces: meal.free_places ? parseInt(meal.free_places, 10) : undefined,
       price: meal.price ? parseFloat(meal.price) : undefined,
     };

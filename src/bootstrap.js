@@ -127,6 +127,9 @@ export const i18n = new VueI18n({
   messages,
 });
 
+import moment from 'moment';
+
+moment.locale('de');
 
 /* ============
  * jQuery

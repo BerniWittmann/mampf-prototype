@@ -17,7 +17,11 @@ export default [{
     display_name: 'Durlacher Allee 19',
   },
   guests: [],
-  date: moment('04.06.2017 18:00', 'DD.MM.YYYY HH:mm').toISOString(),
+  date: moment()
+    .add(3, 'days')
+    .hour(19)
+    .minute(0)
+    .toISOString(),
   free_places: 3,
   price: 2.5,
 }, {
@@ -37,7 +41,11 @@ export default [{
     display_name: 'Zamenhofstraße 8',
   },
   guests: [],
-  date: moment('02.06.2017 18:00', 'DD.MM.YYYY HH:mm').toISOString(),
+  date: moment()
+    .add(1, 'days')
+    .hour(18)
+    .minute(30)
+    .toISOString(),
   free_places: 0,
   price: 4.3,
 }, {
@@ -57,7 +65,10 @@ export default [{
     display_name: 'Rhode-Island-Allee 50',
   },
   guests: [],
-  date: moment('03.06.2017 18:00', 'DD.MM.YYYY HH:mm').toISOString(),
+  date: moment()
+    .hour(18)
+    .minute(0)
+    .toISOString(),
   free_places: 1,
   price: 1.9,
 }];
