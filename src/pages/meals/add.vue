@@ -92,7 +92,7 @@
           ],
           price: [
             { required: true, message: this.$t('validation.price.required'), trigger: 'blur' },
-            { min: 0, message: this.$t('validation.blur.min'), trigger: 'blur' },
+            { min: 0, message: this.$t('validation.price.min'), trigger: 'blur' },
           ],
           date: [
             { type: 'date', required: true, message: this.$t('validation.date.required'), trigger: 'change' },

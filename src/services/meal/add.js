@@ -1,18 +1,16 @@
-import moment from 'moment';
-
 import mealTransformer from './../../transformers/meal';
 import Vue from 'vue';
 import store from './../../store';
-import { guid } from '../../utils/helpers';
-
+import { guid, combineDate } from '../../utils/helpers';
 
 // When the request succeeds
 const success = (meal) => {
+  const dateTime = combineDate(meal.date, meal.time);
   const newMeal = mealTransformer.fetch({
     name: meal.name,
     price: parseFloat(meal.price),
     free_places: parseInt(meal.places, 10),
-    date: meal.date ? moment(meal.date, 'DD.MM.YYYY HH:mm').toISOString() : undefined,
+    date: dateTime ? dateTime.toISOString() : undefined,
     id: guid(),
     guests: [],
     author: {

@@ -19,6 +19,18 @@ export function guid() {
   return moment().valueOf();
 }
 
-export function foo() {
-  return 'bar';
+/**
+ * Method used to generate a moment object from a separate date and time
+ *
+ * @param {String} date DateString
+ * @param {String} time TimeString
+ * @returns {Object} moment Object
+ */
+export function combineDate(date, time) {
+  if (!date) return undefined;
+  if (!time) time = '09:00';
+  date = typeof date === 'string' ? date : moment(date).format('DD.MM.YYYY');
+  time = typeof time === 'string' ? time : moment(time).format('HH:mm');
+  const dateTimeString = `${date} ${time}`;
+  return moment(dateTimeString, 'DD.MM.YYYY HH:mm');
 }
