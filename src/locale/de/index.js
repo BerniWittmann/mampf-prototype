@@ -12,6 +12,7 @@ import * as general from './general.json';
 import * as nav from './nav.json';
 import * as account from './account.json';
 import * as meal from './meal.json';
+import * as validation from './validation.json';
 
 export default {
   ...localeElementUi,
@@ -20,4 +21,5 @@ export default {
   nav,
   account,
   meal,
+  validation,
 };

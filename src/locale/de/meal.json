@@ -11,5 +11,7 @@
   "date": "Datum",
   "date_label": "Datum des Essens",
   "datetime": "Datum und Uhrzeit",
-  "datetime_label": "Datum des Essens"
+  "datetime_label": "Datum des Essens",
+  "time": "Uhrzeit",
+  "time_label": "Uhrzeit des Essens"
 }

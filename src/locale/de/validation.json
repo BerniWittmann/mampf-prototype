@@ -1,0 +1,20 @@
+{
+  "name": {
+    "required": "Bitte gib einen Namen für dein Gericht an",
+    "minlength": "Der Name ist zu kurz"
+  },
+  "places": {
+    "required": "Bitte gib eine Anzahl an Plätzen an",
+    "min": "Du musst mindestens einen Gast einladen"
+  },
+  "price": {
+    "required": "Bitte gib einen Preis an",
+    "min": "Bitte gib einen gültigen Preis an"
+  },
+  "date": {
+    "required": "Bitte gib an an welchem Tag dein Essen stattfindet"
+  },
+  "time": {
+    "required": "Bitte gib an um wieviel Uhr dein Essen stattfindet"
+  }
+}
