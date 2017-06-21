@@ -183,6 +183,29 @@ import money from 'v-money';
 // register directive v-money and component <money>
 Vue.use(money);
 
+/* ============
+ * Waypoint Component
+ * ============
+ *
+ * Register Waypoint
+ *
+ * https://github.com/scaccogatto/vue-waypoint
+ */
+import VueWaypoint from 'vue-waypoint';
+
+Vue.use(VueWaypoint);
+
+/* ============
+ * ScrollTo directive
+ * ============
+ *
+ * Register ScrolLToDirective
+ *
+ * https://github.com/rigor789/vue-scrollto
+ */
+import VueScrollTo from 'vue-scrollto';
+
+Vue.use(VueScrollTo);
 
 /* ============
  * Font Awesome

@@ -34,9 +34,10 @@
   }
 }
 
-.page {
-  height: 100%;
-  max-height: calc(100vh - 115px);
-  overflow: auto;
-  padding-bottom: 30px;
+.form-part {
+  margin-bottom: 5em;
+
+  .form-part-title {
+    margin-bottom: 10px;
+  }
 }
