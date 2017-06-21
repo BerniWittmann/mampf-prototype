@@ -9,6 +9,7 @@ import moment from 'moment';
 
 import Transformer from './transformer';
 import ImageTransformer from './image';
+import PriceTransformer from './price';
 
 export default class MealTransformer extends Transformer {
   /**
@@ -31,11 +32,11 @@ export default class MealTransformer extends Transformer {
       location: meal.location ? {
         displayName: meal.location.display_name,
       } : undefined,
-      guests: meal.guests,
+      guests: meal.guests || [],
       date: meal.date ? moment(meal.date, moment.ISO_8601) : undefined,
       displayDate: meal.date ? moment().to(meal.date) : undefined,
       freePlaces: meal.free_places ? parseInt(meal.free_places, 10) : undefined,
-      price: meal.price ? parseFloat(meal.price) : undefined,
+      price: PriceTransformer.fetch(meal.price),
     };
   }
 
@@ -50,19 +51,19 @@ export default class MealTransformer extends Transformer {
     return {
       id: meal.id,
       name: meal.name,
-      author: {
+      author: meal.author ? {
         name: meal.author.name,
         rating: meal.author.rating,
         image: ImageTransformer.send(meal.author.image),
-      },
+      } : undefined,
       image: ImageTransformer.send(meal.image),
-      location: {
-        display_Name: meal.location.displayName,
-      },
+      location: meal.location ? {
+        display_name: meal.location.displayName,
+      } : undefined,
       date: meal.date ? meal.date.toISOString() : undefined,
       guests: meal.guests,
-      freePlaces: meal.freePlaces,
-      price: meal.price,
+      free_places: meal.freePlaces,
+      price: PriceTransformer.send(meal.price),
     };
   }
 }

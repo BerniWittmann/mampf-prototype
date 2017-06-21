@@ -36,6 +36,7 @@
     "moment": "^2.18.1",
     "normalize.css": "^7.0.0",
     "serve-static": "^1.12.3",
+    "v-money": "^0.5.0",
     "vue": "^2.2.6",
     "vue-i18n": "^6.1.1",
     "vue-router": "^2.5.1",

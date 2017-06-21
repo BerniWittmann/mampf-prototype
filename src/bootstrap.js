@@ -170,6 +170,19 @@ Vue.use(ElementUI, {
   i18n: key => i18n.t(key),
 });
 
+/* ============
+ * Money Directive
+ * ============
+ *
+ * Register Directive for handling money inputs
+ *
+ * https://github.com/vuejs-tips/v-money
+ */
+import money from 'v-money';
+
+// register directive v-money and component <money>
+Vue.use(money);
+
 
 /* ============
  * Font Awesome

@@ -5,24 +5,7 @@ import { guid, combineDate } from '../../utils/helpers';
 
 // When the request succeeds
 const success = (meal) => {
-  const dateTime = combineDate(meal.date, meal.time);
-  const newMeal = mealTransformer.fetch({
-    name: meal.name,
-    price: parseFloat(meal.price),
-    free_places: parseInt(meal.places, 10),
-    date: dateTime ? dateTime.toISOString() : undefined,
-    id: guid(),
-    guests: [],
-    author: {
-      name: 'Me',
-      rating: undefined,
-      image: undefined,
-    },
-    image: undefined,
-    location: undefined,
-  });
-
-  store.dispatch('meal/add', newMeal);
+  store.dispatch('meal/add', mealTransformer.fetch(meal));
   Vue.router.push({
     name: 'meals.index',
   });
@@ -49,6 +32,14 @@ export default (meal) => {
   if (!meal.name || !meal.places || !meal.date || !meal.price) {
     failed();
   } else {
-    success(meal);
+    meal.date = combineDate(meal.date, meal.time);
+    meal.author = {
+      name: 'Me',
+      rating: undefined,
+      image: undefined,
+    };
+    meal.id = guid();
+    meal.freePlaces = meal.places;
+    success(mealTransformer.send(meal));
   }
 };

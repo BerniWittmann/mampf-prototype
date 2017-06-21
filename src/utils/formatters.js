@@ -5,7 +5,7 @@
  * simple formatting functions
  */
 
-import { defaultCurrencySymbol } from './constants';
+import { defaultCurrencySymbol, defaultMoneyConfig } from './constants';
 
 /**
  * Method used to convert a double number to a price
@@ -13,10 +13,27 @@ import { defaultCurrencySymbol } from './constants';
  * @param value The price as a double
  * @returns {String} Formatted Price string
  */
-function price(value) {
+function displayPrice(value) {
   return `${value.toFixed(2).toString().replace('.', ',')}${defaultCurrencySymbol}`;
 }
 
+/**
+ * Method used to convert a price String to a float
+ *
+ * @param str The price as a string
+ * @returns {Number} Price number
+ */
+function priceToFloat(str) {
+  str = str
+    .replace(defaultCurrencySymbol, '')
+    .split(' ')
+    .join('')
+    .replace(defaultMoneyConfig.decimal, '.')
+    .replace(defaultMoneyConfig.thousands, '');
+  return parseFloat(str);
+}
+
 export default {
-  price,
+  displayPrice,
+  priceToFloat,
 };

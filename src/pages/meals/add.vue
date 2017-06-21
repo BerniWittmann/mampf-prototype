@@ -22,11 +22,9 @@
                                  type="number"></el-input-number>
               </el-form-item>
               <el-form-item :label="$t('meal.price_label')" prop="price">
-                <el-input v-model="meal.price"
+                <el-input v-model.lazy="meal.price" v-money="moneyConfig"
                           :placeholder="$t('meal.price')"
-                          step="any"
-                          min="0"
-                          type="number"></el-input>
+                          min="0"></el-input>
               </el-form-item>
               <el-form-item :label="$t('meal.date_label')" prop="date">
                 <el-date-picker type="date" :placeholder="$t('meal.date')" v-model="meal.date"
@@ -59,13 +57,16 @@
 
   import moment from 'moment';
 
-  import mealService from '../../services/meal';
+  import mealService from '@/services/meal';
+  import MoneyMixin from '@/mixins/money';
 
   export default {
     components: {
       VLayout: require('@/layouts/background.vue'),
       VPanel: require('@/components/panel.vue'),
     },
+
+    mixins: [MoneyMixin],
 
     data() {
       return {

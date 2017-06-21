@@ -22,7 +22,7 @@
       </span>
       <span class="meal-panel-footer-info">
         <span class="meal-panel-footer-info-price">
-          {{this.price}}
+          {{this.meal.price}}
         </span>
         <span v-bind:class="this.freePlacesTextClasses">
           {{this.freePlacesText}}
@@ -39,7 +39,6 @@
    *
    * A panel component which displays a meal.
    */
-  import formatters from '../utils/formatters';
   import { highlightFreePlacesThreshold } from '../utils/constants';
 
   export default {
@@ -57,10 +56,6 @@
         if (!this.meal.image || !this.meal.image.url) return './static/images/meals/empty.png';
 
         return this.meal.image.url;
-      },
-
-      price() {
-        return formatters.price(this.meal.price);
       },
 
       freePlaces() {
