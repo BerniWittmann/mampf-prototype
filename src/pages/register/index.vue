@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <el-row>
-      <el-col :span="8" :offset="8">
+      <el-col :lg="{span: 8, offset: 8}" :md="{span: 8, offset: 8}" :sm="{span: 8, offset: 8}" :xs="{span: 22, offset: 1}">
         <v-panel contextual-style="primary">
           <h1 class="panel-title" slot="header">
             {{ $t('auth.registration') }}

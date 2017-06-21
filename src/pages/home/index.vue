@@ -19,10 +19,10 @@
     </el-row>
 
     <el-row :gutter="20" class="home-part">
-      <el-col :span="12">
+      <el-col :lg="12" :md="12" :sm="24" :xs="24">
         <div class="home-subheader-image"></div>
       </el-col>
-      <el-col :span="12">
+      <el-col :lg="12" :md="12" :sm="24" :xs="24">
         <h3>Gemeinsam essen lohnt sich</h3>
         <p class="lead">Essen anbieten. Gäste einladen. Kosten sparen</p>
         <v-link-button

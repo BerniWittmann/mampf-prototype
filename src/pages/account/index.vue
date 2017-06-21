@@ -1,7 +1,7 @@
 <template>
   <v-layout>
     <el-row>
-      <el-col :span="12" :offset="6">
+      <el-col :lg="{span: 12, offset: 6}" :md="{span: 12, offset: 6}" :sm="{span: 12, offset: 6}" :xs="{span: 22, offset: 1}">
         <v-panel contextual-style="primary">
           <h1 class="panel-title"
               slot="header"
