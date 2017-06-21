@@ -2,8 +2,10 @@
   <div class="full-size-background">
     <v-navigation></v-navigation>
 
-    <!-- Content will be placed here -->
-    <slot></slot>
+    <div class="page">
+      <!-- Content will be placed here -->
+      <slot></slot>
+    </div>
   </div>
 </template>
 

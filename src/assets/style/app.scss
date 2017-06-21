@@ -24,8 +24,19 @@
 }
 
 .full-size-background {
-  background: url('../../../static/images/home_header.jpg') center;
-  background-size: cover;
   width: 100vw;
   height: 100vh;
+  background: url('../../../static/images/home_header.jpg') no-repeat fixed center;
+  background-size: cover;
+
+  & > .el-row {
+    overflow: hidden;
+  }
+}
+
+.page {
+  height: 100%;
+  max-height: calc(100vh - 115px);
+  overflow: auto;
+  padding-bottom: 30px;
 }
