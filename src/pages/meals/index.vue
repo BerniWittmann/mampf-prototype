@@ -26,13 +26,5 @@
         return this.$store.state.meal.meals;
       },
     },
-
-    created() {
-      this.startFullscreenLoading();
-    },
-
-    mounted() {
-      this.stopLoading();
-    },
   };
 </script>

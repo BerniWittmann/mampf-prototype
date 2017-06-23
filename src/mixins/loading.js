@@ -43,4 +43,12 @@ export default {
       });
     },
   },
+
+  created() {
+    this.startFullscreenLoading();
+  },
+
+  mounted() {
+    this.stopLoading();
+  },
 };

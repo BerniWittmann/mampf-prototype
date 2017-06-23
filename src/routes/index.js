@@ -5,6 +5,7 @@
  * The routes and redirects are defined in this file.
  */
 
+import store from '@/store/index';
 
 /**
  * The routes
@@ -55,6 +56,26 @@ export default [
     // If the user needs to be authenticated to view this page
     meta: {
       auth: true,
+    },
+  },
+  {
+    path: '/meals/:mealID',
+    name: 'meals.single',
+    component: require('@/pages/meals/single.vue'),
+
+    // If the user needs to be authenticated to view this page
+    meta: {
+      auth: false,
+    },
+
+    beforeEnter: (to, from, next) => {
+      if (!to.params || !to.params.mealID) {
+        return next({
+          name: 'meals.index',
+        });
+      }
+      store.dispatch('meal/setCurrentByID', to.params.mealID);
+      return next();
     },
   },
 

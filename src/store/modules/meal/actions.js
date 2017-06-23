@@ -20,6 +20,11 @@ export const setCurrent = ({ commit }, payload) => {
   commit(types.SET_CURRENT, payload);
 };
 
+export const setCurrentByID = ({ commit, state }, payload) => {
+  const meal = state.meals.find(single => single.id === payload);
+  commit(types.SET_CURRENT, meal);
+};
+
 export const unsetCurrent = ({ commit }) => {
   commit(types.SET_CURRENT, undefined);
 };
@@ -29,4 +34,5 @@ export default {
   store,
   setCurrent,
   unsetCurrent,
+  setCurrentByID,
 };

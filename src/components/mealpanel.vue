@@ -1,12 +1,13 @@
 <template>
-  <el-card class="meal-panel" :body-style="{ padding: '0px' }">
-    <div class="meal-panel-body">
-      <img class="meal-panel-body-image" v-if="this.imageUrl" v-bind:src="this.imageUrl">
-      <div class="meal-panel-body-text-wrap">
-        <span class="meal-panel-body-text">{{this.meal.name}}</span>
+  <router-link :to="{ name: 'meals.single', params: { mealID: this.meal.id } }" tag="span">
+    <el-card class="meal-panel" :body-style="{ padding: '0px' }">
+      <div class="meal-panel-body">
+        <img class="meal-panel-body-image" v-if="this.imageUrl" v-bind:src="this.imageUrl">
+        <div class="meal-panel-body-text-wrap">
+          <span class="meal-panel-body-text">{{this.meal.name}}</span>
+        </div>
       </div>
-    </div>
-    <div class="meal-panel-footer">
+      <div class="meal-panel-footer">
       <span class="meal-panel-footer-author">
         <span class="meal-panel-footer-author-image">
           <v-user-avatar v-bind:user="this.meal.author" v-bind:size="45"></v-user-avatar>
@@ -20,7 +21,7 @@
           </span>
         </span>
       </span>
-      <span class="meal-panel-footer-info">
+        <span class="meal-panel-footer-info">
         <span class="meal-panel-footer-info-price">
           {{this.meal.price}}
         </span>
@@ -28,8 +29,9 @@
           {{this.freePlacesText}}
         </span>
       </span>
-    </div>
-  </el-card>
+      </div>
+    </el-card>
+  </router-link>
 </template>
 
 <script>
