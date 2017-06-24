@@ -40,7 +40,19 @@ export default [{
   location: {
     display_name: 'Zamenhofstraße 8',
   },
-  guests: [],
+  guests: [{
+    name: 'Nina',
+    rating: 3,
+    image: {
+      url: './static/images/users/nina.jpeg',
+    },
+  }, {
+    name: 'Tim',
+    rating: 4,
+    image: {
+      url: './static/images/users/tim.jpeg',
+    },
+  }],
   date: moment()
     .add(1, 'days')
     .hour(18)
@@ -64,7 +76,14 @@ export default [{
   location: {
     display_name: 'Rhode-Island-Allee 50',
   },
-  guests: [],
+  guests: [{
+    name: 'Nina',
+    rating: 3,
+    image: {
+      url: './static/images/users/nina.jpeg',
+    },
+  },
+  ],
   date: moment()
     .hour(18)
     .minute(0)

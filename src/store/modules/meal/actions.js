@@ -16,6 +16,16 @@ export const store = ({ commit }, payload) => {
   commit(types.STORE, payload);
 };
 
+export const storeSingle = ({ commit, state }, payload) => {
+  const meals = state.meals.map((single) => {
+    if (single.id === payload.id) {
+      return payload;
+    }
+    return single;
+  });
+  commit(types.STORE, meals);
+};
+
 export const setCurrent = ({ commit }, payload) => {
   commit(types.SET_CURRENT, payload);
 };
@@ -35,4 +45,5 @@ export default {
   setCurrent,
   unsetCurrent,
   setCurrentByID,
+  storeSingle,
 };

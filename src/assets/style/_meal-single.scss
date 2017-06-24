@@ -15,4 +15,21 @@
     color: #8492A6;
     padding: 5px 20px;
   }
+
+  .meal-single-body-guests-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .meal-single-body-guest {
+      margin-right: 5px;
+      margin-left: 5px;
+
+      &:hover {
+        -webkit-animation: pulse 0.5s;
+        animation: pulse 0.5s;
+      }
+    }
+  }
 }

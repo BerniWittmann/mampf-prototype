@@ -6,4 +6,8 @@
  * account module.
  */
 
-export default {};
+export default {
+  userDetails(state) {
+    return state;
+  },
+};
