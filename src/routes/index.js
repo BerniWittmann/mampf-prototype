@@ -5,7 +5,7 @@
  * The routes and redirects are defined in this file.
  */
 
-import store from '@/store/index';
+import mealService from '@/services/meal';
 
 /**
  * The routes
@@ -74,8 +74,26 @@ export default [
           name: 'meals.index',
         });
       }
-      store.dispatch('meal/setCurrentByID', to.params.mealID);
-      return next();
+      return mealService.getByID(to.params.mealID).then(
+        () => next(),
+        () => next({
+          name: 'meals.index',
+        }),
+      );
+    },
+
+    beforeRouteUpdate: (to, from, next) => {
+      if (!to.params || !to.params.mealID) {
+        return next({
+          name: 'meals.index',
+        });
+      }
+      return mealService.getByID(to.params.mealID).then(
+        () => next(),
+        () => next({
+          name: 'meals.index',
+        }),
+      );
     },
   },
 

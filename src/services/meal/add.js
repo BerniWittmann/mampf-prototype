@@ -1,6 +1,9 @@
 import mealTransformer from './../../transformers/meal';
 import Vue from 'vue';
 import store from './../../store';
+
+import defaultMeals from './defaultData';
+
 import { guid, combineDate } from '../../utils/helpers';
 
 // When the request succeeds
@@ -40,6 +43,7 @@ export default (meal) => {
     };
     meal.id = guid();
     meal.freePlaces = meal.places;
+    defaultMeals.push(meal);
     success(mealTransformer.send(meal));
   }
 };

@@ -7,6 +7,8 @@
     >
       <img class="nav-image" src="static/images/logo.png" :alt="$t('nav.name')">
     </router-link>
+    <el-menu-item v-if="backNavigation" index="meals.index" @click="back"><i class="fa fa-chevron-left"></i> {{backNavigation}}</el-menu-item>
+
     <div class="nav-right">
       <el-menu-item index="meals.add" :route="{ name: 'meals.add' }"><el-button type="primary" size="small"><i class="fa fa-plus"></i> {{ $t('nav.meals_add') }}</el-button></el-menu-item>
       <el-menu-item v-if="isLoggedIn" index="account.index" :route="{ name: 'account.index' }">{{ $t('nav.account') }}</el-menu-item>
@@ -30,6 +32,16 @@
     methods: {
       logout() {
         authService.logout();
+      },
+
+      back() {
+        this.$router.go(-2);
+      },
+    },
+
+    props: {
+      backNavigation: {
+        type: String,
       },
     },
 
