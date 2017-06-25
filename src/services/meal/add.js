@@ -2,7 +2,7 @@ import mealTransformer from './../../transformers/meal';
 import Vue from 'vue';
 import store from './../../store';
 
-import defaultMeals from './defaultData';
+import backendMock from './backendMock';
 
 import { guid, combineDate } from '../../utils/helpers';
 
@@ -43,7 +43,7 @@ export default (meal) => {
     };
     meal.id = guid();
     meal.freePlaces = meal.places;
-    defaultMeals.push(meal);
+    backendMock.add(meal);
     success(mealTransformer.send(meal));
   }
 };

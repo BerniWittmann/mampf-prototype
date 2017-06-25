@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export default [{
+let meals = [{
   id: 'c4ca4238a0b923820dcc509a6f75849b',
   name: 'Zucchininudeln Low Carb',
   image: {
@@ -91,3 +91,32 @@ export default [{
   free_places: 1,
   price: 1.9,
 }];
+
+export default {
+  add(meal) {
+    meals.push(meal);
+  },
+  get() {
+    return meals;
+  },
+  getByID(id) {
+    return meals.find(single => single.id === id);
+  },
+  join(id, guest) {
+    let meal = this.getByID(id);
+    if (!meal) return undefined;
+    // Cloning object to prevent vuex state manipulation error
+    meal = JSON.parse(JSON.stringify(meal));
+
+    meal.guests.push(guest);
+    meal.free_places = Math.max(meal.free_places - 1, 0);
+
+    meals = meals.map((single) => {
+      if (single.id === id) {
+        return meal;
+      }
+      return single;
+    });
+    return meal;
+  },
+};

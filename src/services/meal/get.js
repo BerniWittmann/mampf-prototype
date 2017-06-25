@@ -1,7 +1,7 @@
 import mealTransformer from './../../transformers/meal';
 import store from './../../store';
 
-import defaultMeals from './defaultData';
+import backendMock from './backendMock';
 
 // When the request succeeds
 const success = (meals) => {
@@ -31,7 +31,7 @@ export default () => {
   const succeeds = true;
 
   if (succeeds) {
-    success(defaultMeals);
+    success(backendMock.get());
   } else {
     failed();
   }

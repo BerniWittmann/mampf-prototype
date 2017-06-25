@@ -20,6 +20,7 @@ export default class MealTransformer extends Transformer {
    * @returns {Object} The transformed meal
    */
   static fetch(meal) {
+    if (!meal) return undefined;
     return {
       id: meal.id,
       name: meal.name,

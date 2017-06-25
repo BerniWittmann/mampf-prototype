@@ -1,7 +1,7 @@
 import mealTransformer from './../../transformers/meal';
 import store from './../../store';
 
-import defaultMeals from './defaultData';
+import backendMock from './backendMock';
 
 // When the request succeeds
 const success = (meal) => {
@@ -14,7 +14,7 @@ const failed = () => {
 };
 
 export default id => new Promise((resolve, reject) => {
-  const meal = defaultMeals.find(single => single.id === id);
+  const meal = backendMock.getByID(id);
 
   if (meal) {
     success(meal);

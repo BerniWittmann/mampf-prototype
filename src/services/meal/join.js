@@ -1,12 +1,13 @@
 import mealTransformer from './../../transformers/meal';
 import store from './../../store';
 
-import defaultMeals from './defaultData';
+import backendMock from './backendMock';
 
 // When the request succeeds
 const success = (meal) => {
-  store.dispatch('meal/storeSingle', mealTransformer.fetch(meal));
-  store.dispatch('meal/setCurrent', mealTransformer.fetch(meal));
+  const fetchedMeal = mealTransformer.fetch(meal);
+  store.dispatch('meal/storeSingle', fetchedMeal);
+  store.dispatch('meal/setCurrent', fetchedMeal);
 };
 
 // When the request fails
@@ -15,21 +16,7 @@ const failed = () => {
 };
 
 export default id => new Promise((resolve, reject) => {
-  const meal = defaultMeals.find(single => single.id === id);
-  if (!meal) {
-    failed();
-    return reject();
-  }
-
-  meal.guests.push(store.getters['account/userDetails']);
-  meal.free_places = Math.max(meal.free_places - 1, 0);
-
-  defaultMeals.map((single) => {
-    if (single.id === meal.id) {
-      return meal;
-    }
-    return single;
-  });
+  const meal = backendMock.join(id, store.getters['account/userDetails']);
 
   if (meal) {
     success(meal);
