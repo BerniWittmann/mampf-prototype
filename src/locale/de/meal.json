@@ -13,5 +13,15 @@
   "datetime": "Datum und Uhrzeit",
   "datetime_label": "Datum des Essens",
   "time": "Uhrzeit",
-  "time_label": "Uhrzeit des Essens"
+  "time_label": "Uhrzeit des Essens",
+  "progress": "Fortschritt",
+  "general_info": "Allgemeine Informationen",
+  "guest_info": "Infos für die Gäste",
+  "confirm": "Bestätigen",
+  "confirm_text": "Willst du wirklich das Essen anbieten?",
+  "offer_head": "Ein Essen anbieten",
+  "back": "Zurück zu den Essen",
+  "guests": "Gäste",
+  "join": "Teilnehmen",
+  "already_joined": "Bereits angemeldet"
 }

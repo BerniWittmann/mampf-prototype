@@ -4,15 +4,15 @@
       <el-col :span="24">
         <v-panel class="floating">
           <h1 class="panel-title" slot="header">
-            <h2 class="text-center">Fortschritt</h2>
+            <h2 class="text-center">{{ $t('meal.progress') }}</h2>
           </h1>
           <div slot="body">
             <el-steps :space="100" direction="vertical" :active="scrollIndex">
-              <el-step class="has-link" title="Allgemeine Infos"
+              <el-step class="has-link" :title="$t('meal.general_info')"
                        v-scroll-to="{el: '#form-part-1',container: '#scroll-panel .el-card__body', offset: -300}"></el-step>
-              <el-step class="has-link" title="Infos für die Gäste"
+              <el-step class="has-link" :title="$t('meal.guest_info')"
                        v-scroll-to="{el: '#form-part-2',container: '#scroll-panel .el-card__body', offset: -270}"></el-step>
-              <el-step class="has-link" title="Bestätigen"
+              <el-step class="has-link" :title="$t('meal.confirm')"
                        v-scroll-to="{el: '#form-part-3',container: '#scroll-panel .el-card__body', offset: -200}"></el-step>
             </el-steps>
           </div>
@@ -24,13 +24,13 @@
       <el-col :span="24">
         <v-panel id="scroll-panel">
           <h1 class="panel-title" slot="header">
-            <h1 class="text-center big">Ein Essen anbieten</h1>
+            <h1 class="text-center big">{{ $t('meal.offer_head') }}</h1>
           </h1>
           <div slot="body">
             <el-form ref="form" :model="meal" :rules="rules" label-width="200px" label-position="top"
                      @submit.prevent="add('form')">
               <div class="form-part" id="form-part-1">
-                <h2 class="form-part-title">Allgemeine Infos</h2>
+                <h2 class="form-part-title">{{ $t('meal.general_info') }}</h2>
                 <el-form-item :label="$t('meal.name_label')" prop="name">
                   <el-input v-model="meal.name"
                             :placeholder="$t('meal.name')"
@@ -50,7 +50,7 @@
               </div>
 
               <div class="form-part" id="form-part-2">
-                <h2 class="form-part-title">Infos für die Gäste</h2>
+                <h2 class="form-part-title">{{ $t('meal.guest_info') }}</h2>
                 <el-form-item :label="$t('meal.places_label')" prop="places">
                   <el-input-number v-model.number="meal.places"
                                    :placeholder="$t('meal.places')"
@@ -66,8 +66,8 @@
               </div>
 
               <div class="form-part" id="form-part-3">
-                <h2 class="form-part-title">Bestätigen</h2>
-                <p>Wollen Sie wirklich das Essen anbieten?</p>
+                <h2 class="form-part-title">{{ $t('meal.confirm') }}</h2>
+                <p>{{ $t('meal.confirm_text') }}</p>
                 <br>
                 <el-form-item>
                   <el-button type="primary" @click="add('form')">{{ $t('meal.create') }}</el-button>

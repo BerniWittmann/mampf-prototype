@@ -1,5 +1,5 @@
 <template>
-  <v-layout back-navigation="Zurück zu den Essen">
+  <v-layout :back-navigation="$t('meal.back')">
     <el-row slot="side">
       <el-col :span="24">
         <v-user-panel :user="this.meal.author"></v-user-panel>
@@ -12,9 +12,9 @@
           <h1 class="panel-title" slot="header">
             <h1 class="text-center big">{{this.meal.name}}
               <el-button :disabled="alreadyJoined || bookedOut" v-if="!isAuthor" class="pull-right" type="primary" @click="join">
-                <span v-if="alreadyJoined">Bereits angemeldet</span>
-                <span v-if="!alreadyJoined && bookedOut">Keine Plätze mehr frei</span>
-                <span v-if="!alreadyJoined && !bookedOut">Teilnehmen</span>
+                <span v-if="alreadyJoined">{{ $t('meal.already_joined') }}</span>
+                <span v-if="!alreadyJoined && bookedOut">{{ $t('meal.no_free_places') }}</span>
+                <span v-if="!alreadyJoined && !bookedOut">{{ $t('meal.join') }}</span>
               </el-button>
             </h1>
             <span class="meal-single-header-additional-info-wrap">
@@ -27,7 +27,7 @@
           <div slot="body" class="meal-single-body">
             <el-row class="meal-single-body-part">
               <el-col :span="24">
-                <h2>Gäste</h2>
+                <h2>{{ $t('meal.guests') }}</h2>
                 <span class="meal-single-body-guests-wrap">
                   <span class="meal-single-body-guest" v-for="guest in this.meal.guests">
                     <v-user-avatar :show-popover="true" :size="52" :user="guest"></v-user-avatar>
