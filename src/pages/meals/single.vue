@@ -30,7 +30,7 @@
                 <h2>Gäste</h2>
                 <span class="meal-single-body-guests-wrap">
                   <span class="meal-single-body-guest" v-for="guest in this.meal.guests">
-                    <v-user-avatar :size="52" :user="guest"></v-user-avatar>
+                    <v-user-avatar :show-popover="true" :size="52" :user="guest"></v-user-avatar>
                   </span>
                 </span>
               </el-col>

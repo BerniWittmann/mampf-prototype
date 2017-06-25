@@ -30,6 +30,9 @@ export default () => {
 
   if (succeeds) {
     success({
+      id: '4',
+      name: 'John',
+      rating: undefined,
       first_name: 'John',
       last_name: 'Doe',
       email: 'john@doe.com',

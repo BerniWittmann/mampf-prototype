@@ -17,6 +17,9 @@ export default class AccountTransformer extends Transformer {
    */
   static fetch(account) {
     return {
+      id: account.id,
+      name: account.name,
+      rating: account.rating > 0 ? account.rating : 0,
       email: account.email,
       firstName: account.first_name,
       lastName: account.last_name,
@@ -32,6 +35,9 @@ export default class AccountTransformer extends Transformer {
    */
   static send(account) {
     return {
+      id: account.id,
+      name: account.name,
+      rating: account.rating,
       email: account.email,
       first_name: account.firstName,
       last_name: account.lastName,

@@ -7,8 +7,9 @@ let meals = [{
     url: './static/images/meals/zuchininudeln.jpg',
   },
   author: {
+    id: '1',
     name: 'Nina',
-    rating: 3,
+    rating: 3.5,
     image: {
       url: './static/images/users/nina.jpeg',
     },
@@ -31,6 +32,7 @@ let meals = [{
     url: './static/images/meals/rostbraten.jpg',
   },
   author: {
+    id: '2',
     name: 'Carolin',
     rating: 5,
     image: {
@@ -41,12 +43,14 @@ let meals = [{
     display_name: 'Zamenhofstraße 8',
   },
   guests: [{
+    id: '1',
     name: 'Nina',
-    rating: 3,
+    rating: 3.5,
     image: {
       url: './static/images/users/nina.jpeg',
     },
   }, {
+    id: '3',
     name: 'Tim',
     rating: 4,
     image: {
@@ -67,6 +71,7 @@ let meals = [{
     url: './static/images/meals/maultaschenauflauf.jpg',
   },
   author: {
+    id: '3',
     name: 'Tim',
     rating: 4,
     image: {
@@ -77,8 +82,9 @@ let meals = [{
     display_name: 'Rhode-Island-Allee 50',
   },
   guests: [{
+    id: '1',
     name: 'Nina',
-    rating: 3,
+    rating: 3.5,
     image: {
       url: './static/images/users/nina.jpeg',
     },
