@@ -4,7 +4,7 @@
 
     <el-row>
       <el-col v-if="hasSlot('side')" :lg="{span: 5, offset: 1}" :md="{span: 5, offset: 1}" :sm="{span: 5, offset: 1}"
-              :xs="{span: 22, offset: 1}">
+              :xs="{span: 22, offset: 1}" class="margin-bottom-20">
         <slot name="side"></slot>
       </el-col>
 

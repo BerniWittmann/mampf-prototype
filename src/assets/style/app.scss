@@ -14,6 +14,10 @@
   padding-left: 8px;
 }
 
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
 .container-tiles {
   margin-left: 20px;
   margin-right: 20px;
@@ -29,11 +33,14 @@
 .full-size-background {
   width: 100vw;
   height: 100vh;
-  background: url('../../../static/images/home_header.png') no-repeat fixed center;
-  background-size: cover;
 
   & > .el-row {
     overflow: hidden;
+    margin-top: -20px;
+    padding-top: 20px;
+    height: 100vh;
+    background: url('../../../static/images/home_header.png') no-repeat fixed center;
+    background-size: cover;
   }
 }
 
