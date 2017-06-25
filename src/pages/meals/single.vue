@@ -11,7 +11,7 @@
         <v-panel id="scroll-panel">
           <h1 class="panel-title" slot="header">
             <h1 class="text-center big">{{this.meal.name}}
-              <el-button :disabled="alreadyJoined || bookedOut" class="pull-right" type="primary" @click="join">
+              <el-button :disabled="alreadyJoined || bookedOut" v-if="!isAuthor" class="pull-right" type="primary" @click="join">
                 <span v-if="alreadyJoined">Bereits angemeldet</span>
                 <span v-if="!alreadyJoined && bookedOut">Keine Plätze mehr frei</span>
                 <span v-if="!alreadyJoined && !bookedOut">Teilnehmen</span>
@@ -79,11 +79,18 @@
         return this.meal.location ? this.meal.location.displayName : 'Noch keine Adresse angegeben';
       },
 
+      currentUser() {
+        return this.$store.getters['account/userDetails'];
+      },
+
       alreadyJoined() {
-        const currentUser = this.$store.getters['account/userDetails'];
-        if (!currentUser || !this.meal || !this.meal.guests ||
+        if (!this.currentUser || !this.meal || !this.meal.guests ||
           this.meal.guests.length === 0) return false;
-        return !!this.meal.guests.find(single => single.email === currentUser.email);
+        return !!this.meal.guests.find(single => single.id === this.currentUser.id);
+      },
+
+      isAuthor() {
+        return this.meal.author.id === this.currentUser.id;
       },
     },
 

@@ -1,4 +1,5 @@
 import moment from 'moment';
+import { guid } from '../../utils/helpers';
 
 let meals = [{
   id: 'c4ca4238a0b923820dcc509a6f75849b',
@@ -100,7 +101,18 @@ let meals = [{
 
 export default {
   add(meal) {
+    meal.author = {
+      name: 'John',
+      rating: 0,
+      image: undefined,
+      first_name: 'John',
+      last_name: 'Doe',
+      id: '4',
+    };
+    meal.guests = [];
+    meal.id = guid().toString();
     meals.push(meal);
+    return meal;
   },
   get() {
     return meals;

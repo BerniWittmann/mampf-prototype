@@ -4,7 +4,7 @@ import store from './../../store';
 
 import backendMock from './backendMock';
 
-import { guid, combineDate } from '../../utils/helpers';
+import { combineDate } from '../../utils/helpers';
 
 // When the request succeeds
 const success = (meal) => {
@@ -36,14 +36,7 @@ export default (meal) => {
     failed();
   } else {
     meal.date = combineDate(meal.date, meal.time);
-    meal.author = {
-      name: 'Me',
-      rating: undefined,
-      image: undefined,
-    };
-    meal.id = guid();
     meal.freePlaces = meal.places;
-    backendMock.add(meal);
-    success(mealTransformer.send(meal));
+    success(backendMock.add(mealTransformer.send(meal)));
   }
 };

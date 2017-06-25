@@ -6,6 +6,7 @@
  */
 
 import Transformer from './transformer';
+import ImageTransformer from './image';
 
 export default class AccountTransformer extends Transformer {
   /**
@@ -16,6 +17,7 @@ export default class AccountTransformer extends Transformer {
    * @returns {Object} The transformed account
    */
   static fetch(account) {
+    if (!account) return undefined;
     return {
       id: account.id,
       name: account.name,
@@ -23,6 +25,7 @@ export default class AccountTransformer extends Transformer {
       email: account.email,
       firstName: account.first_name,
       lastName: account.last_name,
+      image: ImageTransformer.fetch(account.image),
     };
   }
 
@@ -34,6 +37,7 @@ export default class AccountTransformer extends Transformer {
    * @returns {Object} The transformed account
    */
   static send(account) {
+    if (!account) return undefined;
     return {
       id: account.id,
       name: account.name,
@@ -41,6 +45,7 @@ export default class AccountTransformer extends Transformer {
       email: account.email,
       first_name: account.firstName,
       last_name: account.lastName,
+      image: ImageTransformer.send(account.image),
     };
   }
 }

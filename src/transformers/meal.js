@@ -9,6 +9,7 @@ import moment from 'moment';
 
 import Transformer from './transformer';
 import ImageTransformer from './image';
+import AccountTransformer from './account';
 import PriceTransformer from './price';
 
 export default class MealTransformer extends Transformer {
@@ -24,11 +25,7 @@ export default class MealTransformer extends Transformer {
     return {
       id: meal.id,
       name: meal.name,
-      author: {
-        name: meal.author.name,
-        rating: meal.author.rating,
-        image: ImageTransformer.fetch(meal.author.image),
-      },
+      author: AccountTransformer.fetch(meal.author),
       image: ImageTransformer.fetch(meal.image),
       location: meal.location ? {
         displayName: meal.location.display_name,
@@ -53,11 +50,7 @@ export default class MealTransformer extends Transformer {
     return {
       id: meal.id,
       name: meal.name,
-      author: meal.author ? {
-        name: meal.author.name,
-        rating: meal.author.rating,
-        image: ImageTransformer.send(meal.author.image),
-      } : undefined,
+      author: AccountTransformer.send(meal.author),
       image: ImageTransformer.send(meal.image),
       location: meal.location ? {
         display_name: meal.location.displayName,
