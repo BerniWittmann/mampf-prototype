@@ -62,6 +62,11 @@
                             :placeholder="$t('meal.price')"
                             min="0"></el-input>
                 </el-form-item>
+                <el-form-item :label="$t('meal.message_label')" prop="message">
+                  <el-input v-model.number="meal.message"
+                                   :placeholder="$t('meal.message')"
+                                   type="textarea" autosize></el-input>
+                </el-form-item>
                 <v-waypoint @waypoint="(direction, going) => inHandler(direction, going, 2)"></v-waypoint>
               </div>
 
@@ -111,6 +116,7 @@
           price: null,
           date: null,
           time: null,
+          message: null,
         },
         pickerOptionsDate: {
           disabledDate(date) {
@@ -137,6 +143,7 @@
           time: [
             { type: 'date', required: true, message: this.$t('validation.time.required'), trigger: 'change' },
           ],
+          message: [],
         },
       };
     },

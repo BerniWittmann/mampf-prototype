@@ -15,6 +15,7 @@ let meals = [{
       url: './static/images/users/nina.jpeg',
     },
   },
+  message: 'Hallo Leute,\nIch koche heute ganz spontan eine ordentliche Portion Zucchininudeln "Low Carb" - bestens geeignet wenn ihr auch gerade noch an eurer Bikinifigur schleift!\nFreu mich',
   location: {
     display_name: 'Durlacher Allee 19',
   },
@@ -40,6 +41,7 @@ let meals = [{
       url: './static/images/users/carolin.jpeg',
     },
   },
+  message: 'Hi, ich mache einen Rostbraten nach dem Rezept von meiner Oma. Die Portionen werden üppig sein, also bringt einen guten Hunger mit ;)',
   location: {
     display_name: 'Zamenhofstraße 8',
   },
@@ -79,6 +81,7 @@ let meals = [{
       url: './static/images/users/tim.jpeg',
     },
   },
+  message: 'Der Auflauf ist vegetarisch, also sind alle Vegetarier gerne willkommen.\n Bis dann',
   location: {
     display_name: 'Rhode-Island-Allee 50',
   },

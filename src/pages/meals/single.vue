@@ -11,7 +11,8 @@
         <v-panel id="scroll-panel">
           <h1 class="panel-title" slot="header">
             <h1 class="text-center big">{{this.meal.name}}
-              <el-button :disabled="alreadyJoined || bookedOut" v-if="!isAuthor" class="pull-right" type="primary" @click="join">
+              <el-button :disabled="alreadyJoined || bookedOut" v-if="!isAuthor" class="pull-right" type="primary"
+                         @click="join">
                 <span v-if="alreadyJoined">{{ $t('meal.already_joined') }}</span>
                 <span v-if="!alreadyJoined && bookedOut">{{ $t('meal.no_free_places') }}</span>
                 <span v-if="!alreadyJoined && !bookedOut">{{ $t('meal.join') }}</span>
@@ -34,8 +35,17 @@
                   </span>
                 </span>
                 <p>
-                  <v-free-places-text :free-places="this.meal.freePlaces" classes="" :highlight="true"></v-free-places-text>
+                  <v-free-places-text :free-places="this.meal.freePlaces" classes=""
+                                      :highlight="true"></v-free-places-text>
                 </p>
+              </el-col>
+            </el-row>
+            <el-row class="meal-single-body-part" v-if="this.meal.message">
+              <el-col :span="24">
+                <div class="meal-single-body-message-wrap">
+                  <p class="meal-single-body-message-head">{{ $t('meal.message_head', {name: this.meal.author.name}) }}</p>
+                  <p class="meal-single-body-message">{{ this.meal.message }}</p>
+                </div>
               </el-col>
             </el-row>
           </div>

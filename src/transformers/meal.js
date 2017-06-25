@@ -27,6 +27,7 @@ export default class MealTransformer extends Transformer {
       name: meal.name,
       author: AccountTransformer.fetch(meal.author),
       image: ImageTransformer.fetch(meal.image),
+      message: meal.message,
       location: meal.location ? {
         displayName: meal.location.display_name,
       } : undefined,
@@ -52,6 +53,7 @@ export default class MealTransformer extends Transformer {
       name: meal.name,
       author: AccountTransformer.send(meal.author),
       image: ImageTransformer.send(meal.image),
+      message: meal.message,
       location: meal.location ? {
         display_name: meal.location.displayName,
       } : undefined,
