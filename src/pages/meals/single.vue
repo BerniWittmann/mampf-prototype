@@ -33,6 +33,9 @@
                     <v-user-avatar :show-popover="true" :size="52" :user="guest"></v-user-avatar>
                   </span>
                 </span>
+                <p>
+                  <v-free-places-text :free-places="this.meal.freePlaces" classes="" :highlight="true"></v-free-places-text>
+                </p>
               </el-col>
             </el-row>
           </div>
@@ -60,6 +63,7 @@
       VPanel: require('@/components/panel.vue'),
       VUserPanel: require('@/components/userpanel.vue'),
       VUserAvatar: require('@/components/useravatar.vue'),
+      VFreePlacesText: require('@/components/freePlacesText.vue'),
     },
 
     computed: {

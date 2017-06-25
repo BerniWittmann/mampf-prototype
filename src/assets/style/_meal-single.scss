@@ -20,11 +20,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 25px;
 
     .meal-single-body-guest {
       margin-right: 5px;
-      margin-left: 5px;
+      margin-left: -25px;
+
+      &:hover {
+        z-index: 2;
+      }
     }
   }
 }

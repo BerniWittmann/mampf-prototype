@@ -25,9 +25,7 @@
         <span class="meal-panel-footer-info-price">
           {{this.meal.price}}
         </span>
-        <span v-bind:class="this.freePlacesTextClasses">
-          {{this.freePlacesText}}
-        </span>
+        <v-free-places-text :free-places="freePlaces" classes="meal-panel-footer-info-places" :highlight="true"></v-free-places-text>
       </span>
       </div>
     </el-card>
@@ -41,11 +39,10 @@
    *
    * A panel component which displays a meal.
    */
-  import { highlightFreePlacesThreshold } from '../utils/constants';
-
   export default {
     components: {
       VUserAvatar: require('@/components/useravatar.vue'),
+      VFreePlacesText: require('@/components/freePlacesText.vue'),
     },
     props: {
       meal: {
@@ -62,31 +59,6 @@
 
       freePlaces() {
         return Math.max(this.meal.freePlaces || 0, 0);
-      },
-
-      placesAvaliable() {
-        return this.freePlaces > 0;
-      },
-
-      freePlacesText() {
-        if (!this.placesAvaliable) {
-          return this.$t('meal.no_free_places');
-        }
-        return this.$tc('meal.free_places', this.freePlaces, { count: this.freePlaces });
-      },
-
-      freePlacesTextClasses() {
-        const result = ['meal-panel-footer-info-places'];
-
-        if (!this.placesAvaliable) {
-          result.push('booked-out');
-        }
-
-        if (this.freePlaces <= highlightFreePlacesThreshold) {
-          result.push('highlighted');
-        }
-
-        return result.join(' ');
       },
     },
   };

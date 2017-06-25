@@ -80,16 +80,7 @@ $meat-panel-body-padding: 0px;
       }
 
       .meal-panel-footer-info-places {
-        color: #555555;
         font-size: 13px;
-
-        &.highlighted {
-          color: #b6000c;
-        }
-
-        &.booked-out {
-          color: #aaaaaa;
-        }
       }
     }
   }
