@@ -35,6 +35,7 @@
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "normalize.css": "^7.0.0",
+    "serve-favicon": "^2.4.3",
     "serve-static": "^1.12.3",
     "v-money": "^0.5.0",
     "vue": "^2.2.6",
