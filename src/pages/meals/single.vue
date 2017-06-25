@@ -34,6 +34,7 @@
                     <v-user-avatar :show-popover="true" :size="52" :user="guest"></v-user-avatar>
                   </span>
                 </span>
+                <p v-if="this.meal.guests.length === 0" class="meal-single-body-no-guests">{{ $t('meal.no_guests') }}</p>
                 <p>
                   <v-free-places-text :free-places="this.meal.freePlaces" classes=""
                                       :highlight="true"></v-free-places-text>

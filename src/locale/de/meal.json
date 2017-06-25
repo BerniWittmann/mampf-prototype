@@ -29,5 +29,6 @@
   "message_head": "{name} schreibt:",
   "tags": "Zutaten",
   "tags_label": "Gib ein paar Zutaten an.",
-  "tag_add": "Zutat hinzufügen"
+  "tag_add": "Zutat hinzufügen",
+  "no_guests": "Noch keine Gäste angemeldet"
 }
