@@ -11,7 +11,7 @@
               <el-step class="has-link" :title="$t('meal.general_info')"
                        v-scroll-to="{el: '#form-part-1',container: '#scroll-panel .el-card__body', offset: -300}"></el-step>
               <el-step class="has-link" :title="$t('meal.guest_info')"
-                       v-scroll-to="{el: '#form-part-2',container: '#scroll-panel .el-card__body', offset: -270}"></el-step>
+                       v-scroll-to="{el: '#form-part-2',container: '#scroll-panel .el-card__body', offset: -100}"></el-step>
               <el-step class="has-link" :title="$t('meal.confirm')"
                        v-scroll-to="{el: '#form-part-3',container: '#scroll-panel .el-card__body', offset: -200}"></el-step>
             </el-steps>
