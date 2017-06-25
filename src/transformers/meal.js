@@ -37,6 +37,7 @@ export default class MealTransformer extends Transformer {
       displayDate: meal.date ? moment(meal.date, moment.ISO_8601).format('DD.MM.YYYY HH:mm') : undefined,
       freePlaces: typeof meal.free_places !== 'undefined' ? parseInt(meal.free_places, 10) : undefined,
       price: PriceTransformer.fetch(meal.price),
+      tags: meal.tags || [],
     };
   }
 
@@ -61,6 +62,7 @@ export default class MealTransformer extends Transformer {
       guests: meal.guests,
       free_places: meal.freePlaces,
       price: PriceTransformer.send(meal.price),
+      tags: meal.tags || [],
     };
   }
 }

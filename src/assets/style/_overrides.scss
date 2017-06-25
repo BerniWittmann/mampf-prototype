@@ -59,3 +59,14 @@ h6 {
 .el-step.has-link {
   cursor: pointer;
 }
+
+.el-tag+.el-tag {
+  margin-left: 5px;
+}
+.input-new-tag {
+  margin-left: 5px;
+  width: auto;
+}
+.button-new-tag {
+  margin-left: 5px;
+}

@@ -67,6 +67,9 @@
                                    :placeholder="$t('meal.message')"
                                    type="textarea" autosize></el-input>
                 </el-form-item>
+                <el-form-item :label="$t('meal.tags_label')" prop="tags">
+                  <v-tags :editable="true" :tags="meal.tags"></v-tags>
+                </el-form-item>
                 <v-waypoint @waypoint="(direction, going) => inHandler(direction, going, 2)"></v-waypoint>
               </div>
 
@@ -104,6 +107,7 @@
     components: {
       VLayout: require('@/layouts/backgroundWithLeftRail.vue'),
       VPanel: require('@/components/panel.vue'),
+      VTags: require('@/components/tags.vue'),
     },
 
     mixins: [MoneyMixin],
@@ -117,6 +121,7 @@
           date: null,
           time: null,
           message: null,
+          tags: [],
         },
         pickerOptionsDate: {
           disabledDate(date) {
@@ -144,6 +149,7 @@
             { type: 'date', required: true, message: this.$t('validation.time.required'), trigger: 'change' },
           ],
           message: [],
+          tags: [],
         },
       };
     },

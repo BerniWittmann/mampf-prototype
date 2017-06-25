@@ -27,6 +27,7 @@ let meals = [{
     .toISOString(),
   free_places: 3,
   price: 2.5,
+  tags: ['Zucchini', 'Mehl', 'Ei', 'Tomaten'],
 }, {
   id: 'c81e728d9d4c2f636f067f89cc14862c',
   name: 'Rostbraten mit Spätzle',
@@ -67,6 +68,7 @@ let meals = [{
     .toISOString(),
   free_places: 0,
   price: 4.3,
+  tags: ['Schweinefleisch', 'Milch', 'Zwiebeln'],
 }, {
   id: 'eccbc87e4b5ce2fe28308fd9f2a7baf3',
   name: 'Maultaschenauflauf',
@@ -100,6 +102,7 @@ let meals = [{
     .toISOString(),
   free_places: 1,
   price: 1.9,
+  tags: ['Maultaschen', 'Spinat', 'Käse'],
 }];
 
 export default {

@@ -48,6 +48,14 @@
                 </div>
               </el-col>
             </el-row>
+            <el-row class="meal-single-body-part" v-if="this.meal.tags">
+              <el-col :span="24">
+                <div class="meal-single-body-tags-wrap">
+                  <p class="meal-single-body-tags-head">{{ $t('meal.tags') }}</p>
+                  <v-tags class="meal-single-body-tags" :tags="this.meal.tags" :editable="false"></v-tags>
+                </div>
+              </el-col>
+            </el-row>
           </div>
         </v-panel>
       </el-col>
@@ -74,6 +82,7 @@
       VUserPanel: require('@/components/userpanel.vue'),
       VUserAvatar: require('@/components/useravatar.vue'),
       VFreePlacesText: require('@/components/freePlacesText.vue'),
+      VTags: require('@/components/tags.vue'),
     },
 
     computed: {

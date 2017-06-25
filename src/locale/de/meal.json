@@ -26,5 +26,8 @@
   "guests": "Gäste",
   "join": "Teilnehmen",
   "already_joined": "Bereits angemeldet",
-  "message_head": "{name} schreibt:"
+  "message_head": "{name} schreibt:",
+  "tags": "Zutaten",
+  "tags_label": "Gib ein paar Zutaten an.",
+  "tag_add": "Zutat hinzufügen"
 }
