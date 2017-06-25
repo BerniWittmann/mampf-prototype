@@ -2,10 +2,14 @@
   <div class="full-size-background">
     <v-navigation></v-navigation>
 
-    <div class="page">
-      <!-- Content will be placed here -->
-      <slot></slot>
-    </div>
+    <el-row>
+      <el-col :span="24">
+        <div class="page">
+          <!-- Content will be placed here -->
+          <slot></slot>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
